@@ -9,8 +9,6 @@
     <link rel="icon" type="image/png" href="IMG/logo.png">
 
     <style>
-
-
         * {
             margin: 0;
             padding: 0;
@@ -73,27 +71,59 @@
             pointer-events: none;
         }
 
-        .main-container {
+        /* Top Controls */
+        .top-controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
             display: flex;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 20px;
-            position: relative;
+            gap: 15px;
+            z-index: 100;
         }
 
-        /* Side Toggle Button */
-        .side-toggle {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--accent-primary);
-            color: white;
-            border: none;
+        .side-toggle, .theme-toggle {
+            background: var(--card-bg);
+            border: 2px solid var(--accent-primary);
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .side-toggle:hover, .theme-toggle:hover {
+            transform: scale(1.1);
+            background: var(--accent-primary);
+        }
+
+        .side-toggle:hover i, .theme-toggle:hover i {
+            color: white;
+        }
+
+        .side-toggle i, .theme-toggle i {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            transition: all 0.3s ease;
+        }
+
+        .side-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        /* All-in-One Search Button */
+        .all-search-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -103,26 +133,218 @@
             z-index: 100;
         }
 
-        .side-toggle:hover {
-            background: var(--accent-secondary);
-            transform: translateY(-50%) scale(1.1);
+        .all-search-toggle:hover {
+            transform: scale(1.1);
+            background: var(--accent-primary);
         }
 
-        .side-toggle i {
+        .all-search-toggle:hover i {
+            color: white;
+        }
+
+        .all-search-toggle i {
             font-size: 1.5rem;
-            transition: transform 0.3s ease;
+            color: var(--accent-primary);
+            transition: all 0.3s ease;
         }
 
-        .side-toggle.active i {
-            transform: rotate(180deg);
+        /* All-in-One Search Panel */
+        .all-search-panel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 90%;
+            max-width: 1000px;
+            height: 100vh;
+            background: var(--search-bg);
+            box-shadow: -5px 0 30px var(--shadow-color);
+            z-index: 1000;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
-        /* Left Side Categories */
+        .all-search-panel.active {
+            right: 0;
+        }
+
+        .all-search-header {
+            padding: 20px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .all-search-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .close-all-search {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-all-search:hover {
+            color: #ff3333;
+            transform: scale(1.2);
+        }
+
+        .all-search-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .all-search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .all-search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--accent-primary);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text-primary);
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        body.dark-mode .all-search-input {
+            background: #2a2a2a;
+            color: white;
+        }
+
+        .all-search-input:focus {
+            border-color: var(--accent-secondary);
+            box-shadow: 0 0 10px var(--shadow-color);
+        }
+
+        .all-search-button {
+            padding: 15px 25px;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .all-search-button:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
+        }
+
+        .all-search-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-results {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            border: 2px solid var(--border-color);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-results-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .category-result-item {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .category-result-item {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .category-result-item:hover {
+            background: rgba(0, 102, 204, 0.2);
+            transform: translateX(5px);
+        }
+
+        body.dark-mode .category-result-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .category-result-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .category-result-details {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .category-result-price {
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .no-results {
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            padding: 15px;
+        }
+
+        .main-container {
+            display: flex;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* Left Side Categories - Improved Design */
         .left-categories {
-            width: 280px;
+            width: 260px;
             flex-shrink: 0;
             position: fixed;
-            left: -300px;
+            left: -280px;
             top: 50%;
             transform: translateY(-50%);
             transition: left 0.4s ease;
@@ -130,43 +352,47 @@
         }
 
         .left-categories.active {
-            left: 90px;
+            left: 20px;
         }
 
         .categories-container {
             background: var(--sidebar-bg);
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 10px 30px var(--shadow-color);
             border: 2px solid var(--border-color);
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
         .categories-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--text-primary);
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
             border-bottom: 2px solid var(--border-color);
         }
 
         .category-btn {
-            padding: 15px;
-            font-size: 1.1rem;
+            padding: 12px 15px;
+            font-size: 1rem;
             font-weight: 600;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: rgba(0, 102, 204, 0.1);
             color: var(--text-primary);
             border: 2px solid var(--accent-primary);
             width: 100%;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
         }
 
         body.dark-mode .category-btn {
@@ -185,13 +411,33 @@
         }
 
         .category-btn i {
-            font-size: 1.3rem;
-            width: 25px;
+            font-size: 1.2rem;
+            width: 20px;
             text-align: center;
         }
 
         .category-btn:last-child {
             margin-bottom: 0;
+        }
+
+        /* Button Slide Animation */
+        .category-btn.sliding {
+            animation: slideOut 0.6s ease forwards;
+        }
+
+        @keyframes slideOut {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(100px);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateX(300px);
+                opacity: 0;
+            }
         }
 
         /* Main Content */
@@ -205,7 +451,7 @@
         }
 
         .content-area.with-sidebar {
-            margin-left: 320px;
+            margin-left: 300px;
         }
 
         .background-animation {
@@ -275,20 +521,15 @@
         }
 
         @keyframes float {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0) translateX(0) rotate(0deg);
             }
-
             25% {
                 transform: translateY(-20px) translateX(10px) rotate(5deg);
             }
-
             50% {
                 transform: translateY(-10px) translateX(20px) rotate(-5deg);
             }
-
             75% {
                 transform: translateY(-30px) translateX(-10px) rotate(3deg);
             }
@@ -300,6 +541,7 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 30px;
+            margin-top: 80px; /* Add space for top controls */
         }
 
         .logo {
@@ -330,12 +572,10 @@
                 opacity: 0;
                 transform: translateY(-50px) scale(0.8);
             }
-
             50% {
                 opacity: 0.5;
                 transform: translateY(10px) scale(1.1);
             }
-
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -346,11 +586,9 @@
             0% {
                 left: -100%;
             }
-
             50% {
                 left: 100%;
             }
-
             100% {
                 left: 100%;
             }
@@ -426,7 +664,6 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -661,11 +898,9 @@
             0% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.05);
             }
-
             100% {
                 transform: scale(1);
             }
@@ -675,7 +910,6 @@
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -686,45 +920,26 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Dark Mode Toggle Button */
-        .theme-toggle {
+        /* Overlay for mobile */
+        .overlay {
+            display: none;
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--card-bg);
-            border: 2px solid var(--accent-primary);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 100;
-            box-shadow: 0 5px 15px var(--shadow-color);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
 
-        .theme-toggle:hover {
-            transform: rotate(30deg);
-            background: var(--accent-primary);
-        }
-
-        .theme-toggle:hover i {
-            color: white;
-        }
-
-        .theme-toggle i {
-            font-size: 1.5rem;
-            color: var(--accent-primary);
-            transition: all 0.3s ease;
+        .left-categories.active~.overlay {
+            display: block;
         }
 
         /* Enhanced Mobile and Tablet Media Queries */
@@ -732,67 +947,59 @@
             .logo {
                 font-size: 4rem;
             }
-
             .tagline {
                 font-size: 1.3rem;
             }
-
             .left-categories {
-                width: 250px;
+                width: 240px;
             }
-
             .content-area.with-sidebar {
-                margin-left: 290px;
+                margin-left: 280px;
             }
         }
 
         @media (max-width: 1024px) {
-            .side-toggle {
+            .top-controls {
+                top: 15px;
                 left: 15px;
-                width: 50px;
-                height: 50px;
             }
-
-            .side-toggle i {
+            .side-toggle, .theme-toggle {
+                width: 45px;
+                height: 45px;
+            }
+            .side-toggle i, .theme-toggle i {
                 font-size: 1.3rem;
             }
-
-            .left-categories.active {
-                left: 75px;
+            .all-search-toggle {
+                top: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
             }
-
+            .all-search-toggle i {
+                font-size: 1.3rem;
+            }
+            .left-categories.active {
+                left: 15px;
+            }
             .content-area.with-sidebar {
                 margin-left: 0;
             }
-
             .categories-container {
                 position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 90%;
-                max-width: 400px;
+                max-width: 350px;
                 z-index: 1000;
                 display: none;
             }
-
             .left-categories.active .categories-container {
                 display: block;
             }
-
-            .overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-            }
-
-            .left-categories.active~.overlay {
-                display: block;
+            .all-search-panel {
+                width: 95%;
             }
         }
 
@@ -800,56 +1007,59 @@
             body {
                 padding: 15px;
             }
-
             .logo {
                 font-size: 3.2rem;
             }
-
             .tagline {
                 font-size: 1.1rem;
                 max-width: 90%;
             }
-
             .welcome-title {
                 font-size: 1.8rem;
                 flex-direction: column;
             }
-
             .welcome-text {
                 font-size: 1.1rem;
             }
-
             .search-box {
                 flex-direction: column;
             }
-
             .contact-title {
                 font-size: 1.7rem;
             }
-
             .contact-info {
                 flex-direction: column;
                 align-items: center;
             }
-
             .contact-item {
                 width: 100%;
             }
-
-            .theme-toggle {
+            .top-controls {
+                top: 10px;
+                left: 10px;
+                gap: 10px;
+            }
+            .side-toggle, .theme-toggle {
+                width: 40px;
+                height: 40px;
+            }
+            .side-toggle i, .theme-toggle i {
+                font-size: 1.2rem;
+            }
+            .all-search-toggle {
                 top: 10px;
                 right: 10px;
                 width: 40px;
                 height: 40px;
             }
-
-            .theme-toggle i {
+            .all-search-toggle i {
                 font-size: 1.2rem;
             }
-
-            .side-toggle {
-                width: 45px;
-                height: 45px;
+            .all-search-results {
+                grid-template-columns: 1fr;
+            }
+            .left-categories.active {
+                left: 10px;
             }
         }
 
@@ -857,25 +1067,20 @@
             body {
                 padding: 10px;
             }
-
             .logo {
                 font-size: 2.5rem;
                 margin-top: 10px;
             }
-
             .tagline {
                 font-size: 1rem;
                 margin-top: 5px;
             }
-
             .welcome-title {
                 font-size: 1.5rem;
             }
-
             .welcome-text {
                 font-size: 1rem;
             }
-
             .contact-title {
                 font-size: 1.5rem;
                 flex-direction: column;
@@ -889,32 +1094,42 @@
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
-
             .category-btn {
                 font-size: 0.9rem;
-                padding: 12px;
+                padding: 10px 12px;
             }
-
             .search-container {
                 padding: 20px;
             }
-
             .welcome-section {
                 padding: 20px;
             }
-
             .contact-section {
                 padding: 20px;
             }
-
-            .side-toggle {
+            .top-controls {
                 left: 10px;
-                width: 40px;
-                height: 40px;
             }
-
-            .side-toggle i {
+            .side-toggle, .theme-toggle {
+                width: 35px;
+                height: 35px;
+            }
+            .side-toggle i, .theme-toggle i {
                 font-size: 1.1rem;
+            }
+            .all-search-toggle {
+                right: 10px;
+                width: 35px;
+                height: 35px;
+            }
+            .all-search-toggle i {
+                font-size: 1.1rem;
+            }
+            .all-search-panel {
+                width: 100%;
+            }
+            .left-categories.active {
+                left: 5px;
             }
         }
 
@@ -922,47 +1137,64 @@
             .logo {
                 font-size: 2.2rem;
             }
-
             .tagline {
                 font-size: 0.9rem;
             }
-
             .category-btn {
                 font-size: 0.8rem;
-                padding: 10px;
+                padding: 8px 10px;
             }
         }
     </style>
 </head>
 
 <body>
-
-
-
-
-
-
-
     <div class="background-animation" id="backgroundAnimation"></div>
 
     <!-- Anti-copy protection overlay -->
     <div class="protection-overlay"></div>
 
-    <!-- Dark Mode Toggle Button -->
-    <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
+    <!-- Top Controls -->
+    <div class="top-controls">
+        <!-- Side Toggle Button -->
+        <button class="side-toggle" id="sideToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Dark Mode Toggle Button -->
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </div>
     </div>
 
-    <!-- Side Toggle Button -->
-    <button class="side-toggle" id="sideToggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    <!-- All-in-One Search Button -->
+    <div class="all-search-toggle" id="allSearchToggle">
+        <i class="fas fa-search"></i>
+    </div>
+
+    <!-- All-in-One Search Panel -->
+    <div class="all-search-panel" id="allSearchPanel">
+        <div class="all-search-header">
+            <h2 class="all-search-title">Search All Parts</h2>
+            <button class="close-all-search" id="closeAllSearch">&times;</button>
+        </div>
+        <div class="all-search-content">
+            <div class="all-search-box">
+                <input type="text" class="all-search-input" id="allSearchInput"
+                    placeholder="Search across all categories (e.g., iPhone 12, Charging Port, Battery)">
+                <button class="all-search-button" id="allSearchButton">Search</button>
+            </div>
+            <div class="all-search-results" id="allSearchResults">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Overlay for mobile -->
     <div class="overlay" id="overlay"></div>
 
     <div class="main-container">
-        <!-- Left Side Categories -->
+        <!-- Left Side Categories - Improved Design -->
         <div class="left-categories" id="leftCategories">
             <div class="categories-container">
                 <div class="categories-title">Parts Categories</div>
@@ -981,6 +1213,11 @@
                 <button disabled class="category-btn" id="categorySpareBtn">
                     <i class="fas fa-cogs"></i>
                     SPARE PARTS
+                </button>
+                <!-- New Repairing CHEMICAL Button -->
+                <button class="category-btn" id="categoryChemicalBtn">
+                    <i class="fas fa-flask"></i>
+                    REPAIRING CHEMICAL
                 </button>
             </div>
         </div>
@@ -1013,7 +1250,7 @@
                 </h2>
                 <p class="welcome-text">
                     <span class="highlight">Battery, Folder, Parts </span> Your Trusted Wholesale Mobile Parts Hub
-                    From batteries to folders and spare parts, we’ve got everything your repair business needs <br> all
+                    From batteries to folders and spare parts, we've got everything your repair business needs <br> all
                     at wholesale prices.
                 </p>
                 <p class="welcome-text">
@@ -1021,7 +1258,7 @@
 
                 </p>
                 <p class="welcome-text">
-                    Reliable quality, competitive prices, and fast updates — that’s <span class="highlight">Alam
+                    Reliable quality, competitive prices, and fast updates — that's <span class="highlight">Alam
                         Telecom</span> where every part powers your success..
                 </p>
             </div>
@@ -1037,7 +1274,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-label">Phone Number</div>
-                        <a href="tel:+919910732766" class="contact-value phone-number">91-9910732766/a>
+                        <a href="tel:+919910732766" class="contact-value phone-number">91-9910732766</a>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1090,7 +1327,7 @@
 
         // Disable text selection except for search input
         document.addEventListener('selectstart', function (e) {
-            if (e.target.className !== 'search-input') {
+            if (e.target.className !== 'search-input' && e.target.className !== 'all-search-input') {
                 e.preventDefault();
                 return false;
             }
@@ -1121,7 +1358,6 @@
             }
 
             // Create mobile parts
-            const partIcons = ['📱', '🔋', '🔧', '🛠️', '⚙️', '💻', '📲', '🔌', '💡'];
 
             for (let i = 0; i < 12; i++) {
                 const mobilePart = document.createElement('div');
@@ -1189,14 +1425,14 @@
 
         // Sample data for folders and batteries
         const folderData = [
-            // iPhone 4 series
             { "model": "iPhone 4", "price": "₹-" },
             { "model": "iPhone 4S", "price": "₹-" },
-            // ... (rest of the folder data remains the same)
+            // ... (rest of the folder data)
         ];
 
         const batteryData = [
-            // vivo 
+
+         // vivo 
             { "company": "Mobicrown", "model": "Vivo V5+", "battery_model": "B-B3", "price": "₹413" },
             { "company": "Mobicrown", "model": "Vivo Y51 / Y52S / Y73S / Y30 / Y20i / Y93S / Y76 / Y51 / Y31S", "battery_model": "B-08", "price": "₹495" },
             { "company": "Mobicrown", "model": "Vivo Y71 / Y85", "battery_model": "B-E1", "price": "₹407" },
@@ -1790,39 +2026,36 @@
             { "company": "Mobicrown", "model": "11DI", "battery_model": "11DI", "price": "₹149" },
             { "company": "Mobicrown", "model": "12AI", "battery_model": "12AI", "price": "₹154" },
             { "company": "Mobicrown", "model": "29BI", "battery_model": "29BI", "price": "₹165" }
+        
+            // ... (rest of the battery data)
         ];
-        // ... (rest of the battery data remains the same)
-
 
         // Sample data for extra items
         const extraItemData = [
             { model: "Charging Port", price: "₹299" },
             { model: "Earpiece Speaker", price: "₹199" },
-            // ... (rest of the extra item data remains the same)
+            // ... (rest of the extra item data)
         ];
 
         // Sample data for spare parts
         const sparePartsData = [
             { model: "Display Assembly", price: "₹1,299" },
             { model: "Back Cover", price: "₹499" },
-            { model: "Main Board", price: "₹2,999" },
-            { model: "Camera Module", price: "₹899" },
-            { model: "Charging Flex", price: "₹349" },
-            { model: "Power Button Flex", price: "₹199" },
-            { model: "Volume Button Flex", price: "₹199" },
-            { model: "Vibrator Motor", price: "₹249" },
-            { model: "Earpiece Speaker", price: "₹199" },
-            { model: "Loudspeaker", price: "₹349" },
-            { model: "Microphone", price: "₹129" },
-            { model: "Front Camera Glass", price: "₹149" },
-            { model: "Back Camera Glass", price: "₹149" },
-            { model: "SIM Tray", price: "₹99" },
-            { model: "Antenna Flex", price: "₹299" },
-            { model: "Proximity Sensor", price: "₹249" },
-            { model: "Light Sensor", price: "₹249" },
-            { model: "Home Button", price: "₹299" },
-            { model: "Fingerprint Scanner", price: "₹599" },
-            { model: "USB-C Port", price: "₹399" }
+            // ... (rest of the spare parts data)
+        ];
+
+        // Sample data for repairing chemicals
+        const chemicalData = [
+            { model: "Isopropyl Alcohol", price: "₹199" },
+            { model: "Thermal Paste", price: "₹149" },
+            { model: "Contact Cleaner", price: "₹299" },
+            { model: "PCB Cleaner", price: "₹349" },
+            { model: "Screen Adhesive", price: "₹249" },
+            { model: "BGA Flux", price: "₹399" },
+            { model: "Solder Paste", price: "₹299" },
+            { model: "Conformal Coating", price: "₹449" },
+            { model: "Desoldering Wick", price: "₹199" },
+            { model: "Solder Wire", price: "₹179" }
         ];
 
         // Get DOM elements
@@ -1834,6 +2067,7 @@
         const categoryExtraBtn = document.getElementById('categoryExtraBtn');
         const categoryBatteryBtn = document.getElementById('categoryBatteryBtn');
         const categorySpareBtn = document.getElementById('categorySpareBtn');
+        const categoryChemicalBtn = document.getElementById('categoryChemicalBtn');
         const searchContainer = document.getElementById('searchContainer');
         const searchTitle = document.getElementById('searchTitle');
         const closeSearch = document.getElementById('closeSearch');
@@ -1841,9 +2075,15 @@
         const searchButton = document.getElementById('searchButton');
         const searchResults = document.getElementById('searchResults');
         const themeToggle = document.getElementById('themeToggle');
+        const allSearchToggle = document.getElementById('allSearchToggle');
+        const allSearchPanel = document.getElementById('allSearchPanel');
+        const closeAllSearch = document.getElementById('closeAllSearch');
+        const allSearchInput = document.getElementById('allSearchInput');
+        const allSearchButton = document.getElementById('allSearchButton');
+        const allSearchResults = document.getElementById('allSearchResults');
         const body = document.body;
 
-        let currentSearchType = ''; // 'folder', 'battery', 'extra', or 'spare'
+        let currentSearchType = ''; // 'folder', 'battery', 'extra', 'spare', or 'chemical'
 
         // Toggle side categories
         sideToggle.addEventListener('click', function () {
@@ -1859,52 +2099,74 @@
             contentArea.classList.remove('with-sidebar');
         });
 
-        // Function to handle search button clicks
-        function handleSearchButtonClick(type, title, placeholder) {
-            // Remove active class from all category buttons
-            document.querySelectorAll('.category-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+        // All-in-One Search Toggle
+        allSearchToggle.addEventListener('click', function () {
+            allSearchPanel.classList.add('active');
+            allSearchInput.focus();
+        });
 
-            // Add active class to clicked category button
-            if (type === 'folder') categoryFolderBtn.classList.add('active');
-            if (type === 'extra') categoryExtraBtn.classList.add('active');
-            if (type === 'battery') categoryBatteryBtn.classList.add('active');
-            if (type === 'spare') categorySpareBtn.classList.add('active');
+        // Close All-in-One Search Panel
+        closeAllSearch.addEventListener('click', function () {
+            allSearchPanel.classList.remove('active');
+            allSearchInput.value = '';
+            allSearchResults.innerHTML = '';
+        });
 
-            // Set search type and show search container at the top
-            currentSearchType = type;
-            searchTitle.textContent = title;
-            searchInput.placeholder = placeholder;
-            searchContainer.style.display = 'block';
-            searchInput.focus();
+        // Function to handle search button clicks with slide animation
+        function handleSearchButtonClick(type, title, placeholder, button) {
+            // Add sliding animation to the clicked button
+            button.classList.add('sliding');
+            
+            // Wait for animation to complete
+            setTimeout(() => {
+                // Remove active class from all category buttons
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.remove('sliding');
+                });
 
-            // Clear previous results
-            searchResults.innerHTML = '';
+                // Add active class to clicked category button
+                button.classList.add('active');
 
-            // Close sidebar on mobile after selecting category
-            if (window.innerWidth <= 1024) {
-                leftCategories.classList.remove('active');
-                sideToggle.classList.remove('active');
-                contentArea.classList.remove('with-sidebar');
-            }
+                // Set search type and show search container at the top
+                currentSearchType = type;
+                searchTitle.textContent = title;
+                searchInput.placeholder = placeholder;
+                searchContainer.style.display = 'block';
+                searchInput.focus();
+
+                // Clear previous results
+                searchResults.innerHTML = '';
+
+                // Close sidebar on mobile after selecting category
+                if (window.innerWidth <= 1024) {
+                    leftCategories.classList.remove('active');
+                    sideToggle.classList.remove('active');
+                    contentArea.classList.remove('with-sidebar');
+                }
+            }, 600); // Match the animation duration
         }
 
-        // Category button click events
+        // Category button click events with slide animation
         categoryFolderBtn.addEventListener('click', function () {
-            handleSearchButtonClick('folder', 'Search Mobile Folders', 'Enter phone model (e.g., Samsung S21, iPhone 12)');
+            handleSearchButtonClick('folder', 'Search Mobile Folders', 'Enter phone model (e.g., Samsung S21, iPhone 12)', this);
         });
 
         categoryBatteryBtn.addEventListener('click', function () {
-            handleSearchButtonClick('battery', 'Search Mobile Batteries', 'Enter phone model (e.g., Vivo V21, Samsung S21)');
+            handleSearchButtonClick('battery', 'Search Mobile Batteries', 'Enter phone model (e.g., Vivo V21, Samsung S21)', this);
         });
 
         categoryExtraBtn.addEventListener('click', function () {
-            handleSearchButtonClick('extra', 'Search Extra Items', 'Enter item name (e.g., Charging Port, Camera)');
+            handleSearchButtonClick('extra', 'Search Extra Items', 'Enter item name (e.g., Charging Port, Camera)', this);
         });
 
         categorySpareBtn.addEventListener('click', function () {
-            handleSearchButtonClick('spare', 'Search Spare Parts', 'Enter part name (e.g., Display, Camera Module)');
+            handleSearchButtonClick('spare', 'Search Spare Parts', 'Enter part name (e.g., Display, Camera Module)', this);
+        });
+
+        // New Chemical Button Event
+        categoryChemicalBtn.addEventListener('click', function () {
+            handleSearchButtonClick('chemical', 'Search Repairing Chemicals', 'Enter chemical name (e.g., Isopropyl Alcohol, Thermal Paste)', this);
         });
 
         // Close search container
@@ -1938,6 +2200,8 @@
                 data = extraItemData;
             } else if (currentSearchType === 'spare') {
                 data = sparePartsData;
+            } else if (currentSearchType === 'chemical') {
+                data = chemicalData;
             } else {
                 data = [];
             }
@@ -1980,7 +2244,7 @@
                         <div class="result-price">${item.price}</div>
                     `;
                 } else {
-                    // For folder, extra items and spare parts, display as before
+                    // For other categories, display as before
                     resultItem.innerHTML = `
                         <div class="result-name">${item.model}</div>
                         <div class="result-price">${item.price}</div>
@@ -1988,6 +2252,131 @@
                 }
 
                 searchResults.appendChild(resultItem);
+            });
+        }
+
+        // All-in-One Search functionality
+        allSearchButton.addEventListener('click', performAllSearch);
+        allSearchInput.addEventListener('keyup', function () {
+            // Perform search as user types (real-time search)
+            performAllSearch();
+        });
+
+        function performAllSearch() {
+            const searchTerm = allSearchInput.value.toLowerCase().trim();
+
+            if (searchTerm === '') {
+                // Clear results if search is empty
+                allSearchResults.innerHTML = '';
+                return;
+            }
+
+            // Filter results from all categories
+            const folderResults = folderData.filter(item =>
+                item.model.toLowerCase().includes(searchTerm)
+            );
+
+            const batteryResults = batteryData.filter(item =>
+                item.model.toLowerCase().includes(searchTerm) || 
+                item.company.toLowerCase().includes(searchTerm) ||
+                item.battery_model.toLowerCase().includes(searchTerm)
+            );
+
+            const extraResults = extraItemData.filter(item =>
+                item.model.toLowerCase().includes(searchTerm)
+            );
+
+            const spareResults = sparePartsData.filter(item =>
+                item.model.toLowerCase().includes(searchTerm)
+            );
+
+            const chemicalResults = chemicalData.filter(item =>
+                item.model.toLowerCase().includes(searchTerm)
+            );
+
+            displayAllSearchResults(folderResults, batteryResults, extraResults, spareResults, chemicalResults);
+        }
+
+        function displayAllSearchResults(folderResults, batteryResults, extraResults, spareResults, chemicalResults) {
+            allSearchResults.innerHTML = '';
+
+            // Create category sections
+            const categories = [
+                {
+                    title: 'Folders',
+                    icon: 'fa-solid fa-mobile-screen-button',
+                    results: folderResults,
+                    type: 'folder'
+                },
+                {
+                    title: 'Batteries',
+                    icon: 'fas fa-battery-full',
+                    results: batteryResults,
+                    type: 'battery'
+                },
+                {
+                    title: 'Extra Items',
+                    icon: 'fas fa-tools',
+                    results: extraResults,
+                    type: 'extra'
+                },
+                {
+                    title: 'Spare Parts',
+                    icon: 'fas fa-cogs',
+                    results: spareResults,
+                    type: 'spare'
+                },
+                {
+                    title: 'Repairing Chemicals',
+                    icon: 'fas fa-flask',
+                    results: chemicalResults,
+                    type: 'chemical'
+                }
+            ];
+
+            categories.forEach(category => {
+                const categorySection = document.createElement('div');
+                categorySection.className = 'category-results';
+
+                const categoryTitle = document.createElement('div');
+                categoryTitle.className = 'category-title';
+                categoryTitle.innerHTML = `<i class="${category.icon}"></i> ${category.title} (${category.results.length})`;
+
+                const resultsList = document.createElement('div');
+                resultsList.className = 'category-results-list';
+
+                if (category.results.length === 0) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    noResults.textContent = 'No items found';
+                    resultsList.appendChild(noResults);
+                } else {
+                    category.results.forEach(item => {
+                        const resultItem = document.createElement('div');
+                        resultItem.className = 'category-result-item';
+
+                        if (category.type === 'battery') {
+                            // For battery search, display company and model number
+                            resultItem.innerHTML = `
+                                <div class="category-result-name">${item.model}</div>
+                                <div class="category-result-details">Company: ${item.company} | Model: ${item.battery_model}</div>
+                                <div class="category-result-price">${item.price}</div>
+                            `;
+                        } else {
+                            // For other categories, display as before
+                            resultItem.innerHTML = `
+                                <div class="category-result-name">${item.model}</div>
+                                <div class="category-result-price">${item.price}</div>
+                            `;
+                        }
+
+                        resultsList.appendChild(resultItem);
+                    });
+                }
+
+                categorySection.appendChild(categoryTitle);
+                categorySection.appendChild(resultsList);
+                allSearchResults.appendChild(categorySection);
             });
         }
 
