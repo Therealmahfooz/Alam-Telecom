@@ -81,7 +81,8 @@
             z-index: 100;
         }
 
-        .side-toggle, .theme-toggle {
+        .side-toggle,
+        .theme-toggle {
             background: var(--card-bg);
             border: 2px solid var(--accent-primary);
             border-radius: 50%;
@@ -95,16 +96,19 @@
             box-shadow: 0 5px 15px var(--shadow-color);
         }
 
-        .side-toggle:hover, .theme-toggle:hover {
+        .side-toggle:hover,
+        .theme-toggle:hover {
             transform: scale(1.1);
             background: var(--accent-primary);
         }
 
-        .side-toggle:hover i, .theme-toggle:hover i {
+        .side-toggle:hover i,
+        .theme-toggle:hover i {
             color: white;
         }
 
-        .side-toggle i, .theme-toggle i {
+        .side-toggle i,
+        .theme-toggle i {
             font-size: 1.5rem;
             color: var(--accent-primary);
             transition: all 0.3s ease;
@@ -430,10 +434,12 @@
                 transform: translateX(0);
                 opacity: 1;
             }
+
             50% {
                 transform: translateX(100px);
                 opacity: 0.7;
             }
+
             100% {
                 transform: translateX(300px);
                 opacity: 0;
@@ -521,15 +527,20 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0) rotate(0deg);
             }
+
             25% {
                 transform: translateY(-20px) translateX(10px) rotate(5deg);
             }
+
             50% {
                 transform: translateY(-10px) translateX(20px) rotate(-5deg);
             }
+
             75% {
                 transform: translateY(-30px) translateX(-10px) rotate(3deg);
             }
@@ -541,7 +552,8 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 30px;
-            margin-top: 80px; /* Add space for top controls */
+            margin-top: 80px;
+            /* Add space for top controls */
         }
 
         .logo {
@@ -572,10 +584,12 @@
                 opacity: 0;
                 transform: translateY(-50px) scale(0.8);
             }
+
             50% {
                 opacity: 0.5;
                 transform: translateY(10px) scale(1.1);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -586,9 +600,11 @@
             0% {
                 left: -100%;
             }
+
             50% {
                 left: 100%;
             }
+
             100% {
                 left: 100%;
             }
@@ -664,6 +680,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -898,9 +915,11 @@
             0% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.05);
             }
+
             100% {
                 transform: scale(1);
             }
@@ -910,6 +929,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -920,6 +940,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -947,12 +968,15 @@
             .logo {
                 font-size: 4rem;
             }
+
             .tagline {
                 font-size: 1.3rem;
             }
+
             .left-categories {
                 width: 240px;
             }
+
             .content-area.with-sidebar {
                 margin-left: 280px;
             }
@@ -963,28 +987,37 @@
                 top: 15px;
                 left: 15px;
             }
-            .side-toggle, .theme-toggle {
+
+            .side-toggle,
+            .theme-toggle {
                 width: 45px;
                 height: 45px;
             }
-            .side-toggle i, .theme-toggle i {
+
+            .side-toggle i,
+            .theme-toggle i {
                 font-size: 1.3rem;
             }
+
             .all-search-toggle {
                 top: 15px;
                 right: 15px;
                 width: 45px;
                 height: 45px;
             }
+
             .all-search-toggle i {
                 font-size: 1.3rem;
             }
+
             .left-categories.active {
                 left: 15px;
             }
+
             .content-area.with-sidebar {
                 margin-left: 0;
             }
+
             .categories-container {
                 position: fixed;
                 top: 50%;
@@ -995,9 +1028,11 @@
                 z-index: 1000;
                 display: none;
             }
+
             .left-categories.active .categories-container {
                 display: block;
             }
+
             .all-search-panel {
                 width: 95%;
             }
@@ -1007,57 +1042,74 @@
             body {
                 padding: 15px;
             }
+
             .logo {
                 font-size: 3.2rem;
             }
+
             .tagline {
                 font-size: 1.1rem;
                 max-width: 90%;
             }
+
             .welcome-title {
                 font-size: 1.8rem;
                 flex-direction: column;
             }
+
             .welcome-text {
                 font-size: 1.1rem;
             }
+
             .search-box {
                 flex-direction: column;
             }
+
             .contact-title {
                 font-size: 1.7rem;
             }
+
             .contact-info {
                 flex-direction: column;
                 align-items: center;
             }
+
             .contact-item {
                 width: 100%;
             }
+
             .top-controls {
                 top: 10px;
                 left: 10px;
                 gap: 10px;
             }
-            .side-toggle, .theme-toggle {
+
+            .side-toggle,
+            .theme-toggle {
                 width: 40px;
                 height: 40px;
             }
-            .side-toggle i, .theme-toggle i {
+
+            .side-toggle i,
+            .theme-toggle i {
                 font-size: 1.2rem;
             }
+
             .all-search-toggle {
                 top: 10px;
                 right: 10px;
                 width: 40px;
                 height: 40px;
             }
+
             .all-search-toggle i {
                 font-size: 1.2rem;
             }
+
             .all-search-results {
                 grid-template-columns: 1fr;
             }
+
             .left-categories.active {
                 left: 10px;
             }
@@ -1067,20 +1119,25 @@
             body {
                 padding: 10px;
             }
+
             .logo {
                 font-size: 2.5rem;
                 margin-top: 10px;
             }
+
             .tagline {
                 font-size: 1rem;
                 margin-top: 5px;
             }
+
             .welcome-title {
                 font-size: 1.5rem;
             }
+
             .welcome-text {
                 font-size: 1rem;
             }
+
             .contact-title {
                 font-size: 1.5rem;
                 flex-direction: column;
@@ -1094,40 +1151,53 @@
                 word-wrap: break-word;
                 overflow-wrap: break-word;
             }
+
             .category-btn {
                 font-size: 0.9rem;
                 padding: 10px 12px;
             }
+
             .search-container {
                 padding: 20px;
             }
+
             .welcome-section {
                 padding: 20px;
             }
+
             .contact-section {
                 padding: 20px;
             }
+
             .top-controls {
                 left: 10px;
             }
-            .side-toggle, .theme-toggle {
+
+            .side-toggle,
+            .theme-toggle {
                 width: 35px;
                 height: 35px;
             }
-            .side-toggle i, .theme-toggle i {
+
+            .side-toggle i,
+            .theme-toggle i {
                 font-size: 1.1rem;
             }
+
             .all-search-toggle {
                 right: 10px;
                 width: 35px;
                 height: 35px;
             }
+
             .all-search-toggle i {
                 font-size: 1.1rem;
             }
+
             .all-search-panel {
                 width: 100%;
             }
+
             .left-categories.active {
                 left: 5px;
             }
@@ -1137,9 +1207,11 @@
             .logo {
                 font-size: 2.2rem;
             }
+
             .tagline {
                 font-size: 0.9rem;
             }
+
             .category-btn {
                 font-size: 0.8rem;
                 padding: 8px 10px;
@@ -1286,8 +1358,7 @@
                             Phirni road
                             Najafgarh
                             110043</div>
-                        <a href="https://maps.app.goo.gl/vuKQx4tW1vNmTAxdA" target="_blank"
-                            class="contact-value">
+                        <a href="https://maps.app.goo.gl/vuKQx4tW1vNmTAxdA" target="_blank" class="contact-value">
                             Delhi Gate , Delhi - 110001
                         </a>
                     </div>
@@ -1432,7 +1503,7 @@
 
         const batteryData = [
 
-         // vivo 
+            // vivo 
             { "company": "Mobicrown", "model": "Vivo V5+", "battery_model": "B-B3", "price": "₹413" },
             { "company": "Mobicrown", "model": "Vivo Y51 / Y52S / Y73S / Y30 / Y20i / Y93S / Y76 / Y51 / Y31S", "battery_model": "B-08", "price": "₹495" },
             { "company": "Mobicrown", "model": "Vivo Y71 / Y85", "battery_model": "B-E1", "price": "₹407" },
@@ -1711,75 +1782,75 @@
             { "company": "Mobicrown", "model": "Poco F4 5G", "battery_model": "BP49", "price": "₹440" },
 
             // SAMSUNG
-            { "company": "Mobicrown", "model": "A025 / A02 / N02", "battery_model": "NO-505", "price": "₹506" },
-            { "company": "Mobicrown", "model": "A035 / A03", "battery_model": "NO-505", "price": "₹506" },
-            { "company": "Mobicrown", "model": "A31 / A32 4G / A22 4G / F22 4G / A31s", "battery_model": "EB-BA315ABY", "price": "₹506" },
-            { "company": "Mobicrown", "model": "J4+ / J6+ / J7/max / J7prime / ON7 / ONN NEXT", "battery_model": "EB-BG510ABE", "price": "₹506" },
-            { "company": "Mobicrown", "model": "H315", "battery_model": "NO-505", "price": "₹418" },
-            { "company": "Mobicrown", "model": "H352 / M20", "battery_model": "EB-BH317ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "H51", "battery_model": "EB-BG550ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "H31 / M305 / M21 / M205", "battery_model": "EB-BH375ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A70", "battery_model": "EB-BM207ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A71", "battery_model": "EB-BA705ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "J2", "battery_model": "EB-BA715ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A508 / A308 / A30 / A50 / A20", "battery_model": "EB-BB050BCBN", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A208 / A105", "battery_model": "EB-BA505ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "J5 / J2 10 / J3 / Azcore / Jzcore / G530", "battery_model": "SCUD-WT-H6", "price": "₹418" },
-            { "company": "Mobicrown", "model": "J11 / H970W", "battery_model": "EB-BG520CBN", "price": "₹418" },
-            { "company": "Mobicrown", "model": "J7 / J4 / J7next", "battery_model": "E0-BD700CBN", "price": "₹418" },
-            { "company": "Mobicrown", "model": "J510", "battery_model": "EB-BJ510CBE", "price": "₹418" },
-            { "company": "Mobicrown", "model": "H11 / H0571", "battery_model": "HQ-S71", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S9", "battery_model": "EB-BG960ABE", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S9+", "battery_model": "EB-BG965ABE", "price": "₹418" },
-            { "company": "Mobicrown", "model": "H040 / AB7", "battery_model": "EB-BG525DBE", "price": "₹418" },
-            { "company": "Mobicrown", "model": "H40 / A60", "battery_model": "EB-BA606ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S10+", "battery_model": "EB-BG975ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S10", "battery_model": "EB-BG975ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A10 / H10 / A750", "battery_model": "EB-BA750ABU", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A6 / J6 / J8", "battery_model": "EB-BB000BEF", "price": "₹418" },
-            { "company": "Mobicrown", "model": "F12 / F41", "battery_model": "EB-BM207ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A6+/J8+", "battery_model": "EB-BB005ABE", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A78 / A74 / A71 / M12", "battery_model": "EB-BA717ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A52", "battery_model": "EB-BG721ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "F62 / M61", "battery_model": "EB-BM415ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "M01", "battery_model": "HQ-G1N", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A47 / A32 / A72 5G", "battery_model": "EB-BA426ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "D00", "battery_model": "SH-A015F", "price": "₹418" },
-            { "company": "Mobicrown", "model": "L70", "battery_model": "L700", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A53 5G", "battery_model": "EB-BA336ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S21 FE 5G", "battery_model": "EB-BG990ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S21 5G", "battery_model": "EB-BG991ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "M82", "battery_model": "EB-BM325ABN", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A23 5G / M23 5G / M33 5G / A23 4G", "battery_model": "EB-BM526ABS", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A22 5G / F42", "battery_model": "SCUD-WT-W1", "price": "₹418" },
-            { "company": "Mobicrown", "model": "AM / AME / MM", "battery_model": "WT-S-W1", "price": "₹418" },
-            { "company": "Mobicrown", "model": "CDF", "battery_model": "WZ-ZOOD", "price": "₹418" },
-            { "company": "Mobicrown", "model": "JS-PRIME", "battery_model": "EB-BG575ABE", "price": "₹418" },
-            { "company": "Mobicrown", "model": "NOTE 8", "battery_model": "EB-BW950ABA", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A05", "battery_model": "WT-S-N28", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A53 5G", "battery_model": "EB-BA336ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A15", "battery_model": "EB-BA336ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "S20 FE / A62", "battery_model": "EB-BA525ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "A54 5G / A25 5G", "battery_model": "EB-BA546ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "F23 5G / M23 5G / M33 5G / A23 5G / A33", "battery_model": "EB-BM526ABY", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Note 9", "battery_model": "EB-BM965ABU", "price": "₹517" },
-            { "company": "Mobicrown", "model": "A03 Core", "battery_model": "SLC-S0", "price": "₹539" },
-            { "company": "Mobicrown", "model": "M85", "battery_model": "SLC-S1", "price": "₹539" },
-            { "company": "Mobicrown", "model": "M14 / M35", "battery_model": "EB-BM145ABY", "price": "₹407" },
-            { "company": "Mobicrown", "model": "S8", "battery_model": "EB-BG950ABE", "price": "₹462" },
-            { "company": "Mobicrown", "model": "S8+", "battery_model": "EB-BG955ABA", "price": "₹539" },
-            { "company": "Mobicrown", "model": "S10 Lite", "battery_model": "EB-BG975ABU", "price": "₹495" },
-            { "company": "Mobicrown", "model": "S10 Lite", "battery_model": "EB-BG975ABE", "price": "₹407" },
-            { "company": "Mobicrown", "model": "A24", "battery_model": "EB-BA245ABY", "price": "₹517" },
-            { "company": "Mobicrown", "model": "A22 5G", "battery_model": "EB-BA226ABY", "price": "₹561" },
-            { "company": "Mobicrown", "model": "S21 Ultra", "battery_model": "EB-BG998ABY", "price": "₹561" },
-            { "company": "Mobicrown", "model": "S23 Ultra 5G", "battery_model": "EB-BS908ABY", "price": "₹616" },
-            { "company": "Mobicrown", "model": "S20 Ultra", "battery_model": "EB-BG998ABY", "price": "₹616" },
-            { "company": "Mobicrown", "model": "Note 20", "battery_model": "EB-BM935ABY", "price": "₹594" },
-            { "company": "Mobicrown", "model": "M14 / M34 / F84 / M54", "battery_model": "EB-BM146ABY", "price": "₹638" },
-            { "company": "Mobicrown", "model": "J7 2016", "battery_model": "J710", "price": "₹319" },
-            { "company": "Mobicrown", "model": "S24 Ultra", "battery_model": "EB-BS925ABY", "price": "₹704" },
-            { "company": "Mobicrown", "model": "A13 5G", "battery_model": "EB-BA134ABY", "price": "₹583" },
+            { "company": "SAMSUNG", "model": "A025 / A02 / N02", "battery_model": "HQ-5S5", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "A035 / A03", "battery_model": "HQS0", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "A31 / A32 4G / A22 4G / F22 4G / A31s", "battery_model": "EB-BA315ABY", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "J4K / J6k / J7max / J7prime / ON/ / ONN NEXT", "battery_model": "EB-BG510ABE", "price": "₹418" },
+            { "company": "SAMSUNG", "model": "M315", "battery_model": "EB-BH37ABY", "price": "₹594" },
+            { "company": "SAMSUNG", "model": "M30 / M20", "battery_model": "EB-BG580ABU", "price": "₹512" },
+            { "company": "SAMSUNG", "model": "A51", "battery_model": "EB-BA515ABY", "price": "₹473" },
+            { "company": "SAMSUNG", "model": "M31 / M36S / M21 / M26S", "battery_model": "EB-BH37ABY", "price": "₹578" },
+            { "company": "SAMSUNG", "model": "A70 / EB-BA750ABU", "battery_model": "EB-BA750ABU", "price": "₹468" },
+            { "company": "SAMSUNG", "model": "A71/Eb-BA715ABU", "battery_model": "EB-BA715ABY", "price": "₹484" },
+            { "company": "SAMSUNG", "model": "J2", "battery_model": "EB-BG530CBN", "price": "₹275" },
+            { "company": "SAMSUNG", "model": "A50s / A30e / A30 / A50 / A20", "battery_model": "EB-BA505ABU", "price": "₹468" },
+            { "company": "SAMSUNG", "model": "A60s / A16S / WT-N6", "battery_model": "SCUD-WT-N6", "price": "₹451" },
+            { "company": "SAMSUNG", "model": "J5 / J3 10 / J3 / Azone / I2core / G330", "battery_model": "EB-BG530CBN", "price": "₹248" },
+            { "company": "SAMSUNG", "model": "A11 / H070M", "battery_model": "HQ-70N", "price": "₹468" },
+            { "company": "SAMSUNG", "model": "J7 / J4 / J7next", "battery_model": "EB-BJ700CBN", "price": "₹330" },
+            { "company": "SAMSUNG", "model": "J510", "battery_model": "EB-BJ510CEB", "price": "₹330" },
+            { "company": "SAMSUNG", "model": "H11 / H0571", "battery_model": "EB-BG570F", "price": "₹512" },
+            { "company": "SAMSUNG", "model": "S9 / EB60600ABE", "battery_model": "EB-BG660ABE", "price": "₹468" },
+            { "company": "SAMSUNG", "model": "S9+ / EB66965ABE", "battery_model": "EB-BG695ABE", "price": "₹484" },
+            { "company": "SAMSUNG", "model": "M01core / EBBA0113ABY", "battery_model": "EB-BG530BE", "price": "₹374" },
+            { "company": "SAMSUNG", "model": "M06 / A60", "battery_model": "EB-BA606ABU", "price": "₹457" },
+            { "company": "SAMSUNG", "model": "SAW 15h", "battery_model": "EB-BG675ABU", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "SAW S10", "battery_model": "EB-BG673ABU", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "A10 / M10 / A750", "battery_model": "EB-BA750ABU", "price": "₹424" },
+            { "company": "SAMSUNG", "model": "A62 / B2 / B8", "battery_model": "EB-BB020ABE", "price": "₹429" },
+            { "company": "SAMSUNG", "model": "F12 / F41", "battery_model": "EB-BB07ABY", "price": "₹605" },
+            { "company": "SAMSUNG", "model": "A8 - J8", "battery_model": "EB-BB05ABE", "price": "₹457" },
+            { "company": "SAMSUNG", "model": "AZ15 / AZ2 / AZ1 / MT3", "battery_model": "EB-BA217ABY", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "A82", "battery_model": "EB-BG781ABY", "price": "₹506" },
+            { "company": "SAMSUNG", "model": "PZ2 / MS1", "battery_model": "EB-BM115ABY", "price": "₹561" },
+            { "company": "SAMSUNG", "model": "M01", "battery_model": "EB-MD16-G1N", "price": "₹462" },
+            { "company": "SAMSUNG", "model": "A42 / A32 / AZ2 6G", "battery_model": "EB-BA426ABY", "price": "₹561" },
+            { "company": "SAMSUNG", "model": "A01", "battery_model": "SH-A015F", "price": "₹407" },
+            { "company": "SAMSUNG", "model": "J700", "battery_model": "L700", "price": "₹165" },
+            { "company": "SAMSUNG", "model": "A39 6G", "battery_model": "EB-BA336ABY", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "S21 FE 5G", "battery_model": "EB-BG690ABY", "price": "₹517" },
+            { "company": "SAMSUNG", "model": "S21 5G", "battery_model": "EB-BG691ABY", "price": "₹528" },
+            { "company": "SAMSUNG", "model": "M32", "battery_model": "EB-BM325ABY", "price": "₹605" },
+            { "company": "SAMSUNG", "model": "A23 6G / A23 5G / M33 / M52 5G / M53 5G / A23 4G", "battery_model": "EB-BH526ABS", "price": "₹561" },
+            { "company": "SAMSUNG", "model": "A22 5G / F42", "battery_model": "SCUD-WT-W1", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "AM / AME / M04", "battery_model": "WT-S-W1", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "X200", "battery_model": "X200", "price": "₹132" },
+            { "company": "SAMSUNG", "model": "J5 PRIME", "battery_model": "EB-BG570ABE", "price": "₹407" },
+            { "company": "SAMSUNG", "model": "NOT E 8", "battery_model": "EB-BH520ABA", "price": "₹451" },
+            { "company": "SAMSUNG", "model": "A05", "battery_model": "WT-S-K128", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "A33 5G", "battery_model": "EB-BA536ABY", "price": "₹550" },
+            { "company": "SAMSUNG", "model": "A15", "battery_model": "EB-BA156ABY", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "S20 FE / A62", "battery_model": "EB-BA525ABY", "price": "₹517" },
+            { "company": "SAMSUNG", "model": "JAS 5G / A34 5G / A25 5G", "battery_model": "EB-BA546ABY", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "F23 5G / M52 5G / M53 5G / M23 5G / M33 5G / A73 5G / A23 / A33", "battery_model": "EB-BH526ABY", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "Note 9", "battery_model": "EB-BN965ABU", "price": "₹517" },
+            { "company": "SAMSUNG", "model": "A03 Core", "battery_model": "SLC-50", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "A06s", "battery_model": "SLC-51", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "M15 / M35", "battery_model": "EB-BM156ABY", "price": "₹627" },
+            { "company": "SAMSUNG", "model": "S8", "battery_model": "EB-BG950ABE", "price": "₹462" },
+            { "company": "SAMSUNG", "model": "S8+", "battery_model": "EB-BG955ABA", "price": "₹539" },
+            { "company": "SAMSUNG", "model": "S10 LITE", "battery_model": "EB-BG975ABU", "price": "₹495" },
+            { "company": "SAMSUNG", "model": "S6 EDGE", "battery_model": "EB-BG925ABE", "price": "₹407" },
+            { "company": "SAMSUNG", "model": "SAM A24", "battery_model": "EB-BA245ABY", "price": "₹517" },
+            { "company": "SAMSUNG", "model": "A22 5G", "battery_model": "EB-BA226ABY", "price": "₹561" },
+            { "company": "SAMSUNG", "model": "S21 Ultra", "battery_model": "EB-BG998ABY", "price": "₹561" },
+            { "company": "SAMSUNG", "model": "S22 Ultra 5G", "battery_model": "EB-BS908ABY", "price": "₹616" },
+            { "company": "SAMSUNG", "model": "S20 ULTRA", "battery_model": "EB-BG988ABY", "price": "₹616" },
+            { "company": "SAMSUNG", "model": "NOTE20", "battery_model": "EB-BN985ABY", "price": "₹594" },
+            { "company": "SAMSUNG", "model": "M14 / M34 / F54 / M54", "battery_model": "EB-BM146ABY", "price": "₹638" },
+            { "company": "SAMSUNG", "model": "On8 / J710", "battery_model": "J710", "price": "₹319" },
+            { "company": "SAMSUNG", "model": "S24 ULTRA", "battery_model": "EB-BS928ABY", "price": "₹704" },
+            { "company": "SAMSUNG", "model": "A13 5G", "battery_model": "EB-BA136ABY", "price": "₹605" },
 
             // IPHONE (SUPER CAPACITY - 120%)
             { "company": "Mobicrown", "model": "iPhone 5", "battery_model": "5G", "price": "₹413" },
@@ -2026,7 +2097,7 @@
             { "company": "Mobicrown", "model": "11DI", "battery_model": "11DI", "price": "₹149" },
             { "company": "Mobicrown", "model": "12AI", "battery_model": "12AI", "price": "₹154" },
             { "company": "Mobicrown", "model": "29BI", "battery_model": "29BI", "price": "₹165" }
-        
+
             // ... (rest of the battery data)
         ];
 
@@ -2116,7 +2187,7 @@
         function handleSearchButtonClick(type, title, placeholder, button) {
             // Add sliding animation to the clicked button
             button.classList.add('sliding');
-            
+
             // Wait for animation to complete
             setTimeout(() => {
                 // Remove active class from all category buttons
@@ -2277,7 +2348,7 @@
             );
 
             const batteryResults = batteryData.filter(item =>
-                item.model.toLowerCase().includes(searchTerm) || 
+                item.model.toLowerCase().includes(searchTerm) ||
                 item.company.toLowerCase().includes(searchTerm) ||
                 item.battery_model.toLowerCase().includes(searchTerm)
             );
