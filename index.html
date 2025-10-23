@@ -4,20 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALAM TELECOM</title>
+    <title>ALAM TELECOM - Mobile Parts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="IMG/logo.png">
-
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
         }
 
         :root {
@@ -58,17 +52,6 @@
             padding: 20px;
             transition: all 0.5s ease;
             position: relative;
-        }
-
-        /* Anti-copy protection overlay */
-        .protection-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            pointer-events: none;
         }
 
         /* Top Controls */
@@ -223,10 +206,6 @@
             transition: all 0.3s ease;
             background: white;
             color: var(--text-primary);
-            -webkit-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
-            user-select: text;
         }
 
         body.dark-mode .all-search-input {
@@ -343,7 +322,7 @@
             position: relative;
         }
 
-        /* Left Side Categories - Improved Design */
+        /* Left Side Categories */
         .left-categories {
             width: 260px;
             flex-shrink: 0;
@@ -422,28 +401,6 @@
 
         .category-btn:last-child {
             margin-bottom: 0;
-        }
-
-        /* Button Slide Animation */
-        .category-btn.sliding {
-            animation: slideOut 0.6s ease forwards;
-        }
-
-        @keyframes slideOut {
-            0% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translateX(100px);
-                opacity: 0.7;
-            }
-
-            100% {
-                transform: translateX(300px);
-                opacity: 0;
-            }
         }
 
         /* Main Content */
@@ -553,7 +510,6 @@
             align-items: center;
             margin-bottom: 30px;
             margin-top: 80px;
-            /* Add space for top controls */
         }
 
         .logo {
@@ -711,10 +667,6 @@
             transition: all 0.3s ease;
             background: white;
             color: var(--text-primary);
-            -webkit-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
-            user-select: text;
         }
 
         body.dark-mode .search-input {
@@ -1223,9 +1175,6 @@
 <body>
     <div class="background-animation" id="backgroundAnimation"></div>
 
-    <!-- Anti-copy protection overlay -->
-    <div class="protection-overlay"></div>
-
     <!-- Top Controls -->
     <div class="top-controls">
         <!-- Side Toggle Button -->
@@ -1266,15 +1215,15 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="main-container">
-        <!-- Left Side Categories - Improved Design -->
+        <!-- Left Side Categories -->
         <div class="left-categories" id="leftCategories">
             <div class="categories-container">
                 <div class="categories-title">Parts Categories</div>
-                <button disabled class="category-btn" id="categoryFolderBtn">
+                <button class="category-btn" id="categoryFolderBtn">
                     <i class="fa-solid fa-mobile-screen-button"></i>
                     FOLDER
                 </button>
-                <button disabled class="category-btn" id="categoryExtraBtn">
+                <button class="category-btn" id="categoryExtraBtn">
                     <i class="fas fa-tools"></i>
                     EXTRA ITEM
                 </button>
@@ -1282,7 +1231,7 @@
                     <i class="fas fa-battery-full"></i>
                     BATTERY
                 </button>
-                <button disabled class="category-btn" id="categorySpareBtn">
+                <button class="category-btn" id="categorySpareBtn">
                     <i class="fas fa-cogs"></i>
                     SPARE PARTS
                 </button>
@@ -1352,12 +1301,7 @@
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-label">Address <br> Alam telecom
-                            Chauhan market
-                            Opposite BSES complaint office
-                            Phirni road
-                            Najafgarh
-                            110043</div>
+                        <div class="contact-label">Address</div>
                         <a href="https://maps.app.goo.gl/vuKQx4tW1vNmTAxdA" target="_blank" class="contact-value">
                             Delhi Gate , Delhi - 110001
                         </a>
@@ -1379,740 +1323,3929 @@
     </div>
 
     <script>
-        // Anti-copy protection
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-            return false;
-        });
+        // Sample data for batteries with phone brands
+        const batteryData = [
+            
+  {
+    "phone_brand": "VIVO",
+    "model": "V5+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-B3",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y51/Y525/Y73S/Y30/Y20i/Y93S/Y76/Y51/Y31S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-08",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y71/Y85",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-E1",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y81/Y83/Y83pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-E5",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-D9",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y69",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-C8",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "S1 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-K3",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "S1/V17new",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-HO",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y55",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-B1",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V11/Y57/Y11i / V15pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-E8",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-G2",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V11 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-FO",
+    "price": "₹423.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V7+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-C9",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-D5",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y30/Y50",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-M3",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y20/Y20i / Y20S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-05",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-B2",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y17/Y12/Y15/Y11/Z1pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-G7",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y53",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-C1",
+    "price": "₹385.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V15 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-G1",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V17 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-H1",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V17/V19",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-K6",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y19/U20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-H9",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V20/V20pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-N8",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X27",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-G5",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y21/Y31S/Y21S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-S1",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y91/Y93/Y95",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-F3",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y02/Y01/Y15A/Y15S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-S7",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V19",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-M1",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "B K1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-K1",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V23 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-T3",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y33S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-T7",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V20 SE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-06",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V21 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-P9",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y02/Y02s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-W1",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Z1x",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-H3",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y22",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-W3",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y53s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-Q7",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V21/IQZ6 5G/T1 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-T6",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y51L",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-95",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y67/Y66/Y69/V5+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-B9",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y33S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-S2",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Vivo Y35",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-WO",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X60/X60T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-09",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V23e/V23e 5G/S10e / Realme GT 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-R5",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V23 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-T2",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X50",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-N2",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y76 5G/Y76s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-TO",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "QOO 3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-K7",
+    "price": "₹792.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Vivo V21e 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-Q6",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "T1X/IQOO Z5X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-R3",
+    "price": "₹583.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "IQOO Z6 5G/T1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-VO",
+    "price": "₹583.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y53 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-Y1",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y17S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA10",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y73S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-P7",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y36/Y27/Y27 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-Z5",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "QOO Z3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-Q1",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y200 5G/V29e",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA16",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "T2x 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-U2",
+    "price": "₹627.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X70",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-R7",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "IQOO 9 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-T8",
+    "price": "₹1364.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X50 Lite/Y70s/Vivo Y51s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-N5",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "IQ007",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-P3",
+    "price": "₹1364.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "IQOO Z7 Pro 5G / vivo S16 Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-X7",
+    "price": "₹759.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y33S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-X8",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X60 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-P1",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y18/Y03",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA33",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V30 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA18",
+    "price": "₹902.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y77",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-V8",
+    "price": "₹1276.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "VIVO NEX/NEXS/NEX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-E7",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-A7",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y52s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-B8",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "T1 5G/IQOO Z5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-S6",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V25 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-V7",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "QOO 11 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-X3",
+    "price": "₹1419.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X90",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-X5",
+    "price": "₹1419.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V29E",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA08",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y73S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-03",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "Y21L",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-75",
+    "price": "₹341.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "IQOO Neo 855",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-R6",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "QOO 8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-R8",
+    "price": "₹1386.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V29 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-Z7",
+    "price": "₹957.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "T3 5G/V40 SE 5G/V40 Lite 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA28",
+    "price": "₹715.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA43",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "BA45",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BA45",
+    "price": "₹671.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "X50 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-N3",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "VIVO",
+    "model": "V25 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "B-W2",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme2/A3S / A5S / A5 / C1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP673",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A57",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP619",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A9 2020/A5 2020",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP727",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F1S/A59",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP601",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A83",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP649",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP665",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A33 (2020), A32, A52, A53",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP805",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F5/F3/A73/A77",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP631",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme C2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP721",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A1K",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP711",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A52/A72/A92",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP781",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F11",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP707",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F11pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP697",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "C11/C12/C13/C15/Narzo30 / Narzo30pro/C25/C13/Narzo50A / Narzo20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP793",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F15/Reno3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP765",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme5pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP731",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme5/C3 / Realme5i",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP729",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme6/ Realme6i / Realme6pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP757",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme7i/A53/A73",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP803",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP817",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "RealmeX2 / XT",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP741",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme3pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP713",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno2F",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP737",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Narzo10/realme6i/5i/C3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP771",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "RealmeC35 / Realme8i",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP877",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme3 / Realme3i",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP693",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F19pro/A94 4G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP835",
+    "price": "₹550.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A57new",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP923",
+    "price": "₹550.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A74 5G/A54 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP851",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A17/A57 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP915",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Narzo50",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP875",
+    "price": "₹550.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F1/F1+/R9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP609",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realmex",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP723",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP841",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F17pro/A93/A92",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP779",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A76/A96",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP885",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme Q2 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP809",
+    "price": "₹1155.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno3, Reno3Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP755",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 6 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP863",
+    "price": "₹1155.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Find X5 Lite / Reno7 5G / Reno8 / Reno6 Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP855",
+    "price": "₹1155.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A37/Neo9 / Neo7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP615",
+    "price": "₹385.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno Z",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP717",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Oppo CE 2 Lite 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP927",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 9i/9 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP911",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 5Z",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP839",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F9/F9 pro / realme 2 pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP683",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP807",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme Q3 Pro X7 Max GT Neo",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP857",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A72 5G/A73 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP797",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 7 Pro Realme X7 Pro, Narzo 20 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP799",
+    "price": "₹1155.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A71/A83",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP641",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A3/F7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP661",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F9/F9 Pro / R17",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP681",
+    "price": "₹517.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme U1/2 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP695",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "R15x",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP689",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A5S/RealmeX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP701",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP735",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 4 4G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP791",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 10x Zoom",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP705",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 5 4G / Reno 5Lite / Reno 5Z",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP819",
+    "price": "₹715.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 5 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP823",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 8 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP837",
+    "price": "₹737.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 9 4G / Realme 8s 5G / Narzo 50 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP883",
+    "price": "₹627.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A96 Reno 7Z/F21 Pro / F21 Pro 5G/F21s PRO/F21s Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP907",
+    "price": "₹627.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 10",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP957",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A78",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA07",
+    "price": "₹935.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A18",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA21",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A3X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA77",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno7 SE 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP895",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "GT Neo 3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP919",
+    "price": "₹1529.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "10PRO+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP951",
+    "price": "₹902.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "REALME 11 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA15",
+    "price": "₹902.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "C53/C67/12 5G/12X 5G/C65 4G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA17",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A38/A58",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA19",
+    "price": "₹627.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno8 Pro 5G / Reno8 Pro+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP929",
+    "price": "₹1199.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno8 T 5G/A1 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP981",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 4 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP787",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP605",
+    "price": "₹385.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP735",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme X2 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP749",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme X3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP775",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Find X3 Lite / Reno5 5G / Reno4 SE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP811",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 10 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP983",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "RX17 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP679",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Narzo 60 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP999",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "REALME C61/C63 (SUPERVOCC)",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA83",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "RENO 7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP893",
+    "price": "₹902.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 11 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP933",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "RENO 11",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA31",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "K12X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA69",
+    "price": "₹957.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "RENO 10/A2 PRO 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA05",
+    "price": "₹671.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "V15/Realme X7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP833",
+    "price": "₹924.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Narzo 50 / Realme 9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP865",
+    "price": "₹924.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "GT Neo 2/ GT Pro 2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP887",
+    "price": "₹1199.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme GT2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP947",
+    "price": "₹1375.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 12 Pro+ / Realme 12 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA35",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme C61",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPB21",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "K3/Realme X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP715",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 12F",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA79",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno10 Pro+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP993",
+    "price": "₹1309.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "A96 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP879",
+    "price": "₹682.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme 9 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP909",
+    "price": "₹660.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Realme GT 5G/GT Master Explorer Edition",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP849",
+    "price": "₹1199.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 4 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP789",
+    "price": "₹1199.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "F25 Pro 5G / Reno11 F 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA41",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "OPPO",
+    "model": "Reno 4 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP789",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Мібрго",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN47",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi7a",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN49",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note6pro / Note5pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN48",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "MiY3/Mi7/ Note8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN46",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note8pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4J",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "K20/K20pro / Mi9T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP40",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN54",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi8/8A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN51",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note7/Note7pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN4A",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note9pro / Note9S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN52",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note4/Note4X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN43",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi4A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN30",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi9A/9C/PocoM2pro / PocoM2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN56",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi3S/Mi4X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM47",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi5A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN34",
+    "price": "₹401.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note5pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN45",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN44",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN35",
+    "price": "₹401.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi6A/ Mi6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN37",
+    "price": "₹401.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "MiY1/MiA1 / MiY1lite / MiY2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN31",
+    "price": "₹401.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "PocoM3/Note9 4G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN62",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "MiA3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4F",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note10/Note10S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN59",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note9pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN53",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note10 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5A",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "PocoF1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4E",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 11/ Note 11S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5D",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco F3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4Y",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco M4 Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5C",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco C40",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN66",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "POCO X3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN57",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi 11 Lite",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP42",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 9S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN55",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi K30 Pro / Poco F2 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4Q",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Redmi 10C",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5G",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi Note11E/POCO M4 5G/M5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5H",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Redmi 10/ Redmi 10 Prime",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN63",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Redmi K20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP41",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "10T/10T Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM53",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 9T 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM54",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi 6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN36",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Go Note 7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN3A",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "120",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5K",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi 8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM3E",
+    "price": "₹396.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM46",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "K30/X2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4P",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "10X 5G/ 10X Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4S",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "10 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4W",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "11T Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM58",
+    "price": "₹1199.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 11 Pro/POCO X4 Pro/ Note 11E",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5E",
+    "price": "₹792.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "12T Pro/Note 12 5G/X5 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5J",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "130",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5Q",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "A3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5R",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 12 Pro/F5/X5 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP4K",
+    "price": "₹957.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 12",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5M",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco M4/A1new",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5F",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Redmi 12/ Redmi 12 5G/POCO M6 Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM5R",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 11 pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM5A",
+    "price": "₹924.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "11i HyperCharge 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP47",
+    "price": "₹1232.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco X3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN61",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Redmi 10",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN65",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "10 Lite",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4R",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "11T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM59",
+    "price": "₹957.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Xiaomi 11",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4X",
+    "price": "₹902.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "11 Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM55",
+    "price": "₹957.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "REDMI MAX-2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN50",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 13 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5P",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "12X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP46",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco F4 GT/K50",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP48",
+    "price": "₹1496.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco F2 Pro / Redmi K30 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4Q",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "10X Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4T",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 10 Lite/ Note 10 Pro / CC9 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM52",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Mi 10",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM4N",
+    "price": "₹1474.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "K50i 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM5G",
+    "price": "₹979.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "13 4G/5G and the Poco M6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5T",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 14 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5U",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "14C/C75",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BN5X",
+    "price": "₹616.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Note 13 Pro 5G / Poco X6 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BM5V",
+    "price": "₹1034.0"
+  },
+  {
+    "phone_brand": "MI",
+    "model": "Poco F4 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BP49",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A02S/A02 / M02",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HQ-50S",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A03S/A03",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HQ50",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A31/A32 4G / A22 4G/F22 4G/A31s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA315ABY",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "J4+/6+/J7max/J7prime / ON7/ONN NEXT",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG610ABE",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M31S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM317ABY",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M30/M20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG580ABU",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A51",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA515ABY",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M31/M30S/M21/M20S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM207ABY",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A70/EB-BA705ABU",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA705ABU",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A71/EB-BA715ABU",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA715ABY",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "J2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG530CBN",
+    "price": "₹275.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A50s/A30s/A30/A50/A20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA505ABU",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A20s/A10S/WT-N6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "SCUD-WT-N6",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "J5/J2 10/J3 / A2core / J2core / G530",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG530CBN",
+    "price": "₹302.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A11/HQ70N",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HQ-70N",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "J7/J7next",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BJ700CBN",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "J510",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BJ510CBE",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M11/HQS71",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HQ-S71",
+    "price": "₹511.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S9/EBBG960ABE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG960ABE",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S9+/EBBG965ABE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG965ABE",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M01core / EBBA0113ABY",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG530BBE",
+    "price": "₹374.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M40/A60",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA606ABU",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "SAM S10+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG975ABU",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "SAM S10",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG973ABU",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A10/M10/A750",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA750ABU",
+    "price": "₹423.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A6/06/18",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BJ800ABE",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "F12/F41",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM207ABY",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A6+/J8+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BJ805ABE",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A21S/A12/A21/M12",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA217ABY",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A52",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG781ABY",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "F62/M51",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM415ABY",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M01",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HQ-61N",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A42/A32/A72 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA426ABY",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A01",
+    "battery_company": "MOBICROWN",
+    "battery_model": "SM-A015F",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "L700",
+    "battery_company": "MOBICROWN",
+    "battery_model": "L700",
+    "price": "₹165.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A53 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA336ABY",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S21 FE 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG990ABY",
+    "price": "₹517.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S21 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG991ABY",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M32",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM325ABN",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A23 5G/M23 5G/M33/M52 5G/M53 5G/A23 4G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM526ABS",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A22 5G/F42",
+    "battery_company": "MOBICROWN",
+    "battery_model": "SCUD-WT-W1",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A04/A04E/M04",
+    "battery_company": "MOBICROWN",
+    "battery_model": "WT-S-W1",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "X200",
+    "battery_company": "MOBICROWN",
+    "battery_model": "X200",
+    "price": "₹132.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "J5 PRIME",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG570ABE",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "NOTE 8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BN950ABA",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A05",
+    "battery_company": "MOBICROWN",
+    "battery_model": "WT-S-N28",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A33 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA536ABY",
+    "price": "₹550.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA156ABY",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S20 FE/A52",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA525ABY",
+    "price": "₹517.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A54 5G/A34 5G/A25 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA546ABY",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "F23 5G/M525G/M53 5G/M23 5G/M335G/A735G/A23/A33",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM526ABY",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "Note 9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BN965ABU",
+    "price": "₹517.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A03 Core",
+    "battery_company": "MOBICROWN",
+    "battery_model": "SLC-50",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A05s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "SLC-51",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M15/M35",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM156ABY",
+    "price": "₹627.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG950ABE",
+    "price": "₹462.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S8+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG955ABA",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S10 LITE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG975ABU",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S6 EDGE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG925ABE",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "SAM A24",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA245ABY",
+    "price": "₹517.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A22 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA226ABY",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S21 Ultra",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG998ABY",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S22 Ultra 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BS908ABY",
+    "price": "₹616.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S20 ULTRA",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BG988ABY",
+    "price": "₹616.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "NOTE20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BN985ABY",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "M14/M34/F54/M54",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BM146ABY",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "On8/J710",
+    "battery_company": "MOBICROWN",
+    "battery_model": "J710",
+    "price": "₹319.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "S24 ULTRA",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BS928ABY",
+    "price": "₹704.0"
+  },
+  {
+    "phone_brand": "SAMSUNG",
+    "model": "A13 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "EB-BA136ABY",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "5G",
+    "price": "₹412.5"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 5S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "5S",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 5SE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "5SE",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 6G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "6G",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 6+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "6+",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 6s",
+    "battery_company": "MOBICROWN",
+    "battery_model": "6s",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 6S+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "6S+",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 7G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "7G",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 7+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "7+",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 8G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "8G",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 8+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "8+",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "X",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE XR",
+    "battery_company": "MOBICROWN",
+    "battery_model": "XR",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE XS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "XS",
+    "price": "₹968.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE SE 2020",
+    "battery_company": "MOBICROWN",
+    "battery_model": "SE 2020",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE XS Max",
+    "battery_company": "MOBICROWN",
+    "battery_model": "XS Max",
+    "price": "₹880.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 11",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 11 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 Pro",
+    "price": "₹1045.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 11 Pro Max",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 Pro Max",
+    "price": "₹1375.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 12 MINI",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12 MINI",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 12",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12",
+    "price": "₹935.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 12 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12 PRO",
+    "price": "₹935.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 12 PRO MAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12 PRO MAX",
+    "price": "₹1485.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 13",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13",
+    "price": "₹1111.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 13MINI",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13MINI",
+    "price": "₹957.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 13 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13 PRO",
+    "price": "₹1375.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 13 Pro Max",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13 Pro Max",
+    "price": "₹1485.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 14",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14",
+    "price": "₹1089.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 14PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14PRO",
+    "price": "₹1485.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 14 PLUS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14+",
+    "price": "₹1419.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 14PRO MAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14PROMAX",
+    "price": "₹1485.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15",
+    "price": "₹1672.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 15PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15PRO",
+    "price": "₹1969.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 15 PLUS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15+",
+    "price": "₹1749.0"
+  },
+  {
+    "phone_brand": "IPHONE (SUPER CAPACITY - 120%)",
+    "model": "IPHONE 15PROMAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15PROMAX",
+    "price": "₹2178.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 6T/7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP685",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus NORD",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP785",
+    "price": "₹550.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP761",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 8 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP759",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 5T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP637",
+    "price": "₹522.5"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 7 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP699",
+    "price": "₹566.5"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 8T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP801",
+    "price": "₹1155.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "OnePlus 9 Pro 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP827",
+    "price": "₹1265.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "OnePlus Nord 2 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP861",
+    "price": "₹1155.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP829",
+    "price": "₹1265.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus Nord CE 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP845",
+    "price": "₹825.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "ONEPLUS 6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP657",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "ONEPLUS NORD CE2 LITE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP927",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Oneplus 3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP613",
+    "price": "₹506.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "OnePlus 3T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP633",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "OnePlus 7T",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP743",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "10R 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP925",
+    "price": "₹1199.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Nord N100",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP813",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Nord N10 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP815",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "Nord CE 3 Lite 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP989",
+    "price": "₹858.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "7T pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP745",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "OnePlus 9 Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP903",
+    "price": "₹1122.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "OnePlus ACE3/OnePlus NORD CE 4",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA45",
+    "price": "₹1265.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA75",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "NORD 4",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA97",
+    "price": "₹1309.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "ONEPLUS 11",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP975",
+    "price": "₹1309.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "12R",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLPA33",
+    "price": "₹1419.0"
+  },
+  {
+    "phone_brand": "ONEPLUS",
+    "model": "10T 5G/OnePlus Ace Pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BLP945",
+    "price": "₹1353.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "CAMON 115/CAMON i4/ KB3/ CB7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "34CT",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "15 PRO/13/17",
+    "battery_company": "MOBICROWN",
+    "battery_model": "39BT",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "39CT",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "13 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "30UT",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "CAMON I AIR 2+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "36BT",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "SPRAK 4 PRO/ KC8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "39LT",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "X657/X690/X693/KE5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49GX",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "S4/Hot 7 Pro/X626/X626B/X625D",
+    "battery_company": "MOBICROWN",
+    "battery_model": "39KX",
+    "price": "₹456.5"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "X680/Hot 9 Play / Hot10Play/X688B/X688C / Smart 5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "58BX",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Smart 4/S5/X652/X653",
+    "battery_company": "MOBICROWN",
+    "battery_model": "39LX",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Note11/NOTE 12i/Note 12/Pro/5G/Turbo/X663/X670/X671/X676/X677",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49KX",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "CAMON17/CG6/CG7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49GT",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Tecno Pop 7/BF6/Spark Go 2023/BF7/Spark Go 2024 / BG6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49NT",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Hot 30i (X669, X669C) / Smart 7 (X6515) / Smart 8 (X6525)",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49NX",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Note 8/X692/Hot 10/X682",
+    "battery_company": "MOBICROWN",
+    "battery_model": "51BX",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "POUVOIR 4 PRO / Spark 6 Air",
+    "battery_company": "MOBICROWN",
+    "battery_model": "58BT",
+    "price": "₹583.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Hot 8/X650C/X650B/X650D",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49FX",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Pova 2/LE7/Pova 3/LE7n",
+    "battery_company": "MOBICROWN",
+    "battery_model": "68AT",
+    "price": "₹748.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Hot S3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "39GT",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "CAMON 19",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49LT",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Camon 20/ Camon 20 Pro / Spark 20 Pro+",
+    "battery_company": "MOBICROWN",
+    "battery_model": "490T",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Spark 7 Pro / Spark 6 Go / Spark Go 2020 / Camon 15/Camon 15 Air / Spark",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49FT",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Spark 7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "58CT",
+    "price": "₹616.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Tecno i5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "30VT",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Note 30 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49TX",
+    "price": "₹627.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Hot 11/X675",
+    "battery_company": "MOBICROWN",
+    "battery_model": "48DX",
+    "price": "₹583.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Smart HD 2021",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49IX",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Pova 5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "58ET",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Note 10 Pro / Note 11S/ZERO 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49JX",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Spark 6 (KE7) / Camon 16",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49HT",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "Hot 30 5G (X6832) / Smart 7 (X6517) / Hot 10i",
+    "battery_company": "MOBICROWN",
+    "battery_model": "58CX",
+    "price": "₹682.0"
+  },
+  {
+    "phone_brand": "TECHNO/INFINIX",
+    "model": "SPARK GO 1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "49NT",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE340",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 6.1 Plus/Nokia 5.1 Plus/ Nokia X5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE342",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 3.2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "WT240",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 3.1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE336",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "3.1 PLUS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE363",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "6.1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE345",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "NOKIA G10/G20",
+    "battery_company": "MOBICROWN",
+    "battery_model": "WT340",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "4C",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-4C",
+    "price": "₹132.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "5C",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-5C",
+    "price": "₹132.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE338",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 6.2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LC620",
+    "price": "₹434.5"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "4.2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "WT330",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "NOKIA",
+    "model": "Nokia 3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE319",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL 8 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL 8 PRO",
+    "price": "₹924.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL3",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL3A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL3A",
+    "price": "₹649.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL4",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL4",
+    "price": "₹704.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL 4A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL 4A",
+    "price": "₹792.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL5",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXELS",
+    "price": "₹924.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL5A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXELSA",
+    "price": "₹748.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL6",
+    "price": "₹748.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL6A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL6A",
+    "price": "₹748.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL6PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL6PRO",
+    "price": "₹748.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL7",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL7",
+    "price": "₹814.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL7A",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXELZA",
+    "price": "₹814.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL7PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL7PRO",
+    "price": "₹814.0"
+  },
+  {
+    "phone_brand": "GOOGLE",
+    "model": "PIXEL8",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PIXEL8",
+    "price": "₹924.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G5 Plus/Xt1685/Xt1687/Xt1684/Xt1686",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HG40",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G5S+/G5S/G6",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HG30",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Edge 20 Lite",
+    "battery_company": "MOBICROWN",
+    "battery_model": "NT50",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "E5 Plus/E4 Plus",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HE50",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "One Power P30 Note XT1942-1 XT1942-2/G7 Power XT1955",
+    "battery_company": "MOBICROWN",
+    "battery_model": "JK50",
+    "price": "₹517.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "One Fusion Plus",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LG50",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G40 Fusion / Moto G9 Power",
+    "battery_company": "MOBICROWN",
+    "battery_model": "MC50",
+    "price": "₹643.5"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G22",
+    "battery_company": "MOBICROWN",
+    "battery_model": "NH50",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto C",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HC40",
+    "price": "₹308.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto C Plus",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HC60",
+    "price": "₹319.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "E6 Plus/ E6S",
+    "battery_company": "MOBICROWN",
+    "battery_model": "KC40",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G60/G10 Power",
+    "battery_company": "MOBICROWN",
+    "battery_model": "MH60",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto G54",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PC60",
+    "price": "₹605.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto G84 5G",
+    "battery_company": "MOBICROWN",
+    "battery_model": "QB50",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto E4 Plus",
+    "battery_company": "MOBICROWN",
+    "battery_model": "QF50",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto G5/E4",
+    "battery_company": "MOBICROWN",
+    "battery_model": "GK40",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Moto G41 / Moto G32",
+    "battery_company": "MOBICROWN",
+    "battery_model": "NC50",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Edge 50 Fusion",
+    "battery_company": "MOBICROWN",
+    "battery_model": "QC50",
+    "price": "₹902.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G31/G42/G62",
+    "battery_company": "MOBICROWN",
+    "battery_model": "ND50",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G52/G72/G82",
+    "battery_company": "MOBICROWN",
+    "battery_model": "NE50",
+    "price": "₹583.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "Edge 40 and Edge 30 Fusion",
+    "battery_company": "MOBICROWN",
+    "battery_model": "NP44",
+    "price": "₹671.0"
+  },
+  {
+    "phone_brand": "MOTO",
+    "model": "G14/G54",
+    "battery_company": "MOBICROWN",
+    "battery_model": "PC50",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "HONOR",
+    "model": "Honor 9N/8/7A/9LITE/7C/5C/8LITE/P20LITE/P9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HB366481ECW",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "HONOR",
+    "model": "Honor 10 LITE/ Honor 201 / Honor 10",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HB396286ECW",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "HONOR",
+    "model": "Mate 10 Lite P30 Lite G10/Nova 2 Plus 2i 3i 4e/9i 7X/Mate SE",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HB356687ECW",
+    "price": "₹418.0"
+  },
+  {
+    "phone_brand": "HONOR",
+    "model": "Honor 8X",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HB386590ECW",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "HONOR",
+    "model": "Huawei Mate 9",
+    "battery_company": "MOBICROWN",
+    "battery_model": "HB396689ECW",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "One Vision / A56",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-39LI",
+    "price": "₹467.5"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "Magic 1 Max/It5250/It7100/IT5233/It5040/It5320/lt5231",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-19CI",
+    "price": "₹231.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "A23",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-20HI",
+    "price": "₹264.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "IT-5600",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-25BI",
+    "price": "₹225.5"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "A36",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-29CI",
+    "price": "₹286.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "A55/S15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-29BI",
+    "price": "₹385.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "Itel A23 Pro / IT 1508/A41/A40/A 44 Pro / A 41 Plus /A44/A44Air/A46",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-24E1",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "ITEL A60",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-49NI",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "Itel P40",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL-58CI",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "ITEL",
+    "model": "A58/A58 Pro/A27/A49",
+    "battery_company": "MOBICROWN",
+    "battery_model": "38CI",
+    "price": "₹407.0"
+  },
+  {
+    "phone_brand": "MICROMAX",
+    "model": "IN1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "IN1/ACBPN50M06",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "MICROMAX",
+    "model": "IN2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "IN2/ACMPN50M08",
+    "price": "₹577.5"
+  },
+  {
+    "phone_brand": "MICROMAX",
+    "model": "IN NOTE 1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "IN1B",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "ASUS",
+    "model": "Max Pro M1/Max Pro M2",
+    "battery_company": "MOBICROWN",
+    "battery_model": "C11P1706",
+    "price": "₹528.0"
+  },
+  {
+    "phone_brand": "ASUS",
+    "model": "Asus Zenfone Max M1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "C11P1707",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "JIO",
+    "model": "JIO NEXT",
+    "battery_company": "MOBICROWN",
+    "battery_model": "JIO NEXT",
+    "price": "₹286.0"
+  },
+  {
+    "phone_brand": "NOTHING",
+    "model": "NOTHING PHONE 1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "NT01",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "LENOVO",
+    "model": "K8 Note",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL270",
+    "price": "₹473.0"
+  },
+  {
+    "phone_brand": "LENOVO",
+    "model": "K8 PLUS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "BL273",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "LAVA",
+    "model": "Lava A3/A1200",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LEB023",
+    "price": "₹242.0"
+  },
+  {
+    "phone_brand": "LAVA",
+    "model": "LEB024",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LEB024",
+    "price": "₹264.0"
+  },
+  {
+    "phone_brand": "LAVA",
+    "model": "LAVA Z3",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LBP14900072",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "LAVA",
+    "model": "LAVA Z61",
+    "battery_company": "MOBICROWN",
+    "battery_model": "Z61",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "LAVA",
+    "model": "LAVA Z66",
+    "battery_company": "MOBICROWN",
+    "battery_model": "Z66",
+    "price": "₹539.0"
+  },
+  {
+    "phone_brand": "TAB BATTERY",
+    "model": "T225",
+    "battery_company": "MOBICROWN",
+    "battery_model": "T225",
+    "price": "₹836.0"
+  },
+  {
+    "phone_brand": "TAB BATTERY",
+    "model": "T295",
+    "battery_company": "MOBICROWN",
+    "battery_model": "WT-N8",
+    "price": "₹836.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 11",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 CELL",
+    "price": "₹396.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 11 PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 PRO CELL",
+    "price": "₹572.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 11 PRO MAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 PRO MAX CELL",
+    "price": "₹660.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 12",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12 CELL",
+    "price": "₹385.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 12 PRO MAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12 PRO MAX CELL",
+    "price": "₹638.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 13",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13 CELL",
+    "price": "₹429.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE 14 PRO MAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14 PRO MAX CELL",
+    "price": "₹869.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL-120%",
+    "model": "IPHONE XS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "XS CELL",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "5C",
+    "battery_company": "MOBICROWN",
+    "battery_model": "5C",
+    "price": "₹77.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "5C ERROR",
+    "battery_company": "MOBICROWN",
+    "battery_model": "5C ERROR",
+    "price": "₹82.5"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "X200",
+    "battery_company": "MOBICROWN",
+    "battery_model": "X200",
+    "price": "₹77.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "LEB023",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LEB023",
+    "price": "₹154.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "LEB024",
+    "battery_company": "MOBICROWN",
+    "battery_model": "LEB024",
+    "price": "₹110.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "JIO WIFI ROUTER",
+    "battery_company": "MOBICROWN",
+    "battery_model": "JIO WIFI ROUTER",
+    "price": "₹187.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "4UL",
+    "battery_company": "MOBICROWN",
+    "battery_model": "4UL",
+    "price": "₹159.5"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "JIO (F90)",
+    "battery_company": "MOBICROWN",
+    "battery_model": "JIO (F90)",
+    "price": "₹104.5"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "25BI",
+    "battery_company": "MOBICROWN",
+    "battery_model": "25BI",
+    "price": "₹132.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "11DI",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11DI",
+    "price": "₹148.5"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "12AI",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12AI",
+    "price": "₹154.0"
+  },
+  {
+    "phone_brand": "PILOT (LITHIUM BATTERIES)",
+    "model": "29B1",
+    "battery_company": "MOBICROWN",
+    "battery_model": "29BI",
+    "price": "₹165.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "111",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 CELL",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "11pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11pro CELL",
+    "price": "₹495.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "11 pro max",
+    "battery_company": "MOBICROWN",
+    "battery_model": "11 pro max CELL",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "12/12pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12/12pro CELL",
+    "price": "₹330.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "12pro max",
+    "battery_company": "MOBICROWN",
+    "battery_model": "12pro max CELL",
+    "price": "₹561.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "13",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13 CELL",
+    "price": "₹385.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "13pro",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13pro CELL",
+    "price": "₹550.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "13pro max",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13pro max CELL",
+    "price": "₹594.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "13mini",
+    "battery_company": "MOBICROWN",
+    "battery_model": "13mini CELL",
+    "price": "₹319.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "14",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14 CELL",
+    "price": "₹440.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "14PLUS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14PLUS CELL",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "14PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14PRO CELL",
+    "price": "₹704.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "14PROMAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "14PROMAX CELL",
+    "price": "₹616.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "15",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15 CELL",
+    "price": "₹451.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "15PLUS",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15PLUS CELL",
+    "price": "₹484.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "15PRO",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15PRO CELL",
+    "price": "₹726.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "15PROMAX",
+    "battery_company": "MOBICROWN",
+    "battery_model": "15PROMAX CELL",
+    "price": "₹748.0"
+  },
+  {
+    "phone_brand": "IPHONE CELL 100%",
+    "model": "16promax",
+    "battery_company": "MOBICROWN",
+    "battery_model": "16promax CELL",
+    "price": "₹946.0"
+  }
+        ];
 
-        document.addEventListener('keydown', function (e) {
-            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U
-            if (e.keyCode === 123 ||
-                (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
-                (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||
-                (e.ctrlKey && e.keyCode === 85)) {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // Disable text selection except for search input
-        document.addEventListener('selectstart', function (e) {
-            if (e.target.className !== 'search-input' && e.target.className !== 'all-search-input') {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // Create mobile repairing themed background
-        function createMobileRepairBackground() {
-            const backgroundContainer = document.getElementById('backgroundAnimation');
-
-            // Create circuit lines
-            for (let i = 0; i < 8; i++) {
-                const circuitLine = document.createElement('div');
-                circuitLine.classList.add('circuit-line');
-
-                const width = Math.random() * 200 + 50;
-                const height = Math.random() * 4 + 1;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const rotation = Math.random() * 360;
-
-                circuitLine.style.width = `${width}px`;
-                circuitLine.style.height = `${height}px`;
-                circuitLine.style.left = `${posX}%`;
-                circuitLine.style.top = `${posY}%`;
-                circuitLine.style.transform = `rotate(${rotation}deg)`;
-
-                backgroundContainer.appendChild(circuitLine);
-            }
-
-            // Create mobile parts
-
-            for (let i = 0; i < 12; i++) {
-                const mobilePart = document.createElement('div');
-                mobilePart.classList.add('mobile-part');
-
-                const size = Math.random() * 60 + 30;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const delay = Math.random() * 15;
-                const duration = Math.random() * 10 + 15;
-                const iconIndex = Math.floor(Math.random() * partIcons.length);
-
-                mobilePart.style.width = `${size}px`;
-                mobilePart.style.height = `${size}px`;
-                mobilePart.style.left = `${posX}%`;
-                mobilePart.style.top = `${posY}%`;
-                mobilePart.style.animationDelay = `${delay}s`;
-                mobilePart.style.animationDuration = `${duration}s`;
-                mobilePart.textContent = partIcons[iconIndex];
-
-                backgroundContainer.appendChild(mobilePart);
-            }
-
-            // Create screws
-            for (let i = 0; i < 15; i++) {
-                const screw = document.createElement('div');
-                screw.classList.add('screw');
-
-                const size = Math.random() * 15 + 5;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-
-                screw.style.width = `${size}px`;
-                screw.style.height = `${size}px`;
-                screw.style.left = `${posX}%`;
-                screw.style.top = `${posY}%`;
-
-                backgroundContainer.appendChild(screw);
-            }
-
-            // Create tools
-            for (let i = 0; i < 6; i++) {
-                const tool = document.createElement('div');
-                tool.classList.add('tool');
-
-                const width = Math.random() * 40 + 20;
-                const height = Math.random() * 10 + 5;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const rotation = Math.random() * 360;
-                const delay = Math.random() * 20;
-                const duration = Math.random() * 15 + 20;
-
-                tool.style.width = `${width}px`;
-                tool.style.height = `${height}px`;
-                tool.style.left = `${posX}%`;
-                tool.style.top = `${posY}%`;
-                tool.style.transform = `rotate(${rotation}deg)`;
-                tool.style.animationDelay = `${delay}s`;
-                tool.style.animationDuration = `${duration}s`;
-
-                backgroundContainer.appendChild(tool);
-            }
-        }
-
-        // Sample data for folders and batteries
+        // Sample data for folders
         const folderData = [
             { "model": "iPhone 4", "price": "₹-" },
             { "model": "iPhone 4S", "price": "₹-" },
-            // ... (rest of the folder data)
-        ];
-
-        const batteryData = [
-
-            // vivo 
-            { "company": "Mobicrown", "model": "Vivo V5+", "battery_model": "B-B3", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Vivo Y51 / Y52S / Y73S / Y30 / Y20i / Y93S / Y76 / Y51 / Y31S", "battery_model": "B-08", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Vivo Y71 / Y85", "battery_model": "B-E1", "price": "₹407" },
-            { "company": "Mobicrown", "model": "Vivo Y81 / Y83 / Y83pro", "battery_model": "B-E5", "price": "₹407" },
-            { "company": "Mobicrown", "model": "Vivo V9", "battery_model": "B-D9", "price": "₹407" },
-            { "company": "Mobicrown", "model": "Vivo Y69", "battery_model": "B-C8", "price": "₹407" },
-            { "company": "Mobicrown", "model": "Vivo S1 PRO", "battery_model": "B-K3", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Vivo S1 / V17new", "battery_model": "B-H0", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Vivo Y55", "battery_model": "B-B1", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Vivo V11 / Y57 / Y11i / V15pro", "battery_model": "B-E8", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Vivo V15", "battery_model": "B-G2", "price": "₹468" },
-            { "company": "Mobicrown", "model": "Vivo V11 Pro", "battery_model": "B-F0", "price": "₹424" },
-            { "company": "Mobicrown", "model": "Vivo V7+", "battery_model": "B-C9", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Vivo V7", "battery_model": "B-D5", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Vivo Y30 / Y50", "battery_model": "B-M3", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Vivo Y20 / Y20i / Y20S", "battery_model": "B-05", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Vivo V5", "battery_model": "B-B2", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Vivo Y17 / Y12/ Y15 / Y11 / Z1pro", "battery_model": "B-G7", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Vivo Y53", "battery_model": "B-C1", "price": "₹385" },
-            { "company": "Mobicrown", "model": "Vivo V15 Pro", "battery_model": "B-G1", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Vivo V17 Pro", "battery_model": "B-H1", "price": "₹468" },
-            { "company": "Mobicrown", "model": "Vivo V17 / V19", "battery_model": "B-K6", "price": "₹468" },
-            { "company": "Mobicrown", "model": "Vivo Y19 / U20", "battery_model": "B-H9", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Vivo V20 / V20pro", "battery_model": "B-N8", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Vivo X27", "battery_model": "B-G5", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Vivo Y21 / Y315 / Y215", "battery_model": "B-S1", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Vivo Y91/Y93/Y95", "battery_model": "B-F3", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Vivo Y02 / Y01/ Y15A/ Y15S", "battery_model": "B-S7", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Vivo V19", "battery_model": "B-M1", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Vivo B K1", "battery_model": "B-K1", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Vivo V23 5G", "battery_model": "B-T3", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Vivo Y33S", "battery_model": "B-T7", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Vivo V20 SE", "battery_model": "B-06", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Vivo V21 5G", "battery_model": "B-P9", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Vivo Y02/Y02s", "battery_model": "B-W1", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Vivo Zix", "battery_model": "B-H3", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Y22", "battery_model": "B-W3", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Y53s", "battery_model": "B-G7", "price": "₹523" },
-            { "company": "Mobicrown", "model": "V21/IQ26 SG /T1 SG", "battery_model": "B-T6", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Y51s", "battery_model": "B-S5", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Y67 /Y66 /Y69 /V5+", "battery_model": "B-B9", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Y93s", "battery_model": "B-S2", "price": "₹539" },
-            { "company": "Mobicrown", "model": "No Y35", "battery_model": "B-W0", "price": "₹539" },
-            { "company": "Mobicrown", "model": "X60 /X80T", "battery_model": "B-D8", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y28e /Y29e SG /S10e /Realme GT5G", "battery_model": "B-R5", "price": "₹528" },
-            { "company": "Mobicrown", "model": "V23PRO", "battery_model": "B-T2", "price": "₹528" },
-            { "company": "Mobicrown", "model": "X50", "battery_model": "B-N2", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y76 SG /Y76s", "battery_model": "B-T0", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Q00 G3", "battery_model": "B-K7", "price": "₹792" },
-            { "company": "Mobicrown", "model": "Noo Y15t SG", "battery_model": "B-D8", "price": "₹528" },
-            { "company": "Mobicrown", "model": "T1x /OOO Z5X", "battery_model": "B-R3", "price": "₹583" },
-            { "company": "Mobicrown", "model": "Q00Z 26 SG /T1", "battery_model": "B-V0", "price": "₹638" },
-            { "company": "Mobicrown", "model": "Y63 SG", "battery_model": "B-Y1", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y17s", "battery_model": "B-A10", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y33s", "battery_model": "B-P7", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y86 /Y27 /Y27 SG", "battery_model": "B-Z5", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Q00Z 23", "battery_model": "B-Q1", "price": "₹825" },
-            { "company": "Mobicrown", "model": "Y20B SG /Y29e", "battery_model": "B-A18", "price": "₹594" },
-            { "company": "Mobicrown", "model": "T2s SG", "battery_model": "B-U2", "price": "₹627" },
-            { "company": "Mobicrown", "model": "X70", "battery_model": "B-R7", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Q00G 9 Pro", "battery_model": "B-T8", "price": "₹1364" },
-            { "company": "Mobicrown", "model": "X60 Lite /Y76e /Vivo Y51s", "battery_model": "B-N5", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Q00G 7", "battery_model": "B-R3", "price": "₹1364" },
-            { "company": "Mobicrown", "model": "Q00Z 27 Pro SG / vivo S16 Pro SG", "battery_model": "B-X7", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y33S", "battery_model": "B-3G", "price": "₹561" },
-            { "company": "Mobicrown", "model": "X60 Pro", "battery_model": "B-P1", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Y18 /Y03", "battery_model": "B-A33", "price": "₹578" },
-            { "company": "Mobicrown", "model": "Y09 SG", "battery_model": "B-A18", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Y77", "battery_model": "B-V8", "price": "₹1276" },
-            { "company": "Mobicrown", "model": "VIVO NEX /NEX S /NEX", "battery_model": "B-E7", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y3", "battery_model": "B-A7", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Y53s", "battery_model": "B-B8", "price": "₹418" },
-            { "company": "Mobicrown", "model": "T1S / LOOO Z5", "battery_model": "B-S8", "price": "₹528" },
-            { "company": "Mobicrown", "model": "V25 SG", "battery_model": "B-V7", "price": "₹462" },
-            { "company": "Mobicrown", "model": "Q00G 11 SG", "battery_model": "B-X3", "price": "₹1419" },
-            { "company": "Mobicrown", "model": "X90", "battery_model": "B-X5", "price": "₹1419" },
-            { "company": "Mobicrown", "model": "Y36F", "battery_model": "B-A30", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Y73S", "battery_model": "B-O3", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Y21L", "battery_model": "B-T5", "price": "₹341" },
-            { "company": "Mobicrown", "model": "Q00N Neo BS5", "battery_model": "B-Re", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Q00 G3", "battery_model": "B-B8", "price": "₹1386" },
-            { "company": "Mobicrown", "model": "Y29 SG", "battery_model": "B-Z7", "price": "₹517" },
-            { "company": "Mobicrown", "model": "T3 SG /V4D SE SG /V40 Lite SG", "battery_model": "B-A28", "price": "₹715" },
-            { "company": "Mobicrown", "model": "", "battery_model": "B-A43", "price": "₹979" },
-            { "company": "Mobicrown", "model": "BAAS", "battery_model": "B-A45", "price": "₹671" },
-            { "company": "Mobicrown", "model": "X60 Pro", "battery_model": "B-N3", "price": "₹594" },
-            { "company": "Mobicrown", "model": "V25 PRO", "battery_model": "B-V02", "price": "₹979" },
-
-            // Oppo
-            { "company": "Mobicrown", "model": "Oppo Beame 2 / A5S / A5 / C1", "battery_model": "BLP673", "price": "₹451" },
-            { "company": "Mobicrown", "model": "Oppo A57", "battery_model": "BLP619", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Oppo A9 2020 / A5 2020", "battery_model": "BLP727", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Oppo F15 / A59", "battery_model": "BLP601", "price": "₹303" },
-            { "company": "Mobicrown", "model": "Oppo A83", "battery_model": "BLP649", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Oppo Beame 1", "battery_model": "BLP665", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Oppo A33 (2020), A32, A53", "battery_model": "BLP805", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Oppo F5 / F3 / A73 / A77", "battery_model": "BLP631", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Realme C2", "battery_model": "BLP721", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Oppo A14", "battery_model": "BLP711", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Oppo A52 / A72 / A92", "battery_model": "BLP781", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Oppo F11", "battery_model": "BLP707", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Oppo F11 Pro", "battery_model": "BLP697", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Oppo F1 / C12 / C13 / C15 / Narzo 30 / Narzo 30 Pro / C25 / Narzo 50A / Narzo 20", "battery_model": "BLP793", "price": "₹578" },
-            { "company": "Mobicrown", "model": "Oppo F15 / Reno3", "battery_model": "BLP755", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Realme 5 Pro", "battery_model": "BLP731", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Realme 5 / C3 / Realme 5i", "battery_model": "BLP729", "price": "₹506" },
-            { "company": "Mobicrown", "model": "Realme 6 / Realme 6i / Realme 7 Pro", "battery_model": "BLP737", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Realme 7i / A53 / A73", "battery_model": "BLP803", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Oppo A13", "battery_model": "BLP817", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Realme X2 / XT", "battery_model": "BLP741", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Realme 6 Pro", "battery_model": "BLP713", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Oppo Reno Z F", "battery_model": "BLP737", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Narzo 10 / Realme 6i / 5i / C3", "battery_model": "BLP771", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Realme C35 / Realme 6i", "battery_model": "BLP977", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Realme 3 / Realme 3i", "battery_model": "BLP693", "price": "₹468" },
-            { "company": "Mobicrown", "model": "Oppo F15 Pro / A94 4G", "battery_model": "BLP835", "price": "₹550" },
-            { "company": "Mobicrown", "model": "Oppo A57 New", "battery_model": "BLP823", "price": "₹550" },
-            { "company": "Mobicrown", "model": "Oppo X74 5G / A54 5G", "battery_model": "BLP851", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Oppo A17 / A57 5G", "battery_model": "BLP815", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Narzo 02", "battery_model": "BLP825", "price": "₹550" },
-            { "company": "Mobicrown", "model": "Oppo F1 / F1+ / R9", "battery_model": "BLP609", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Realme X", "battery_model": "BLP723", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Realme 8", "battery_model": "BLP841", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Oppo F17 Pro / A93 / A92", "battery_model": "BLP779", "price": "₹385" },
-            { "company": "Mobicrown", "model": "Oppo A76 / A96", "battery_model": "BLP885", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Realme X2 Pro", "battery_model": "BLP809", "price": "₹1155" },
-            { "company": "Mobicrown", "model": "Oppo Reno4, Reno 5 Pro", "battery_model": "BLP755", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Oppo Reno 8 5G", "battery_model": "BLP883", "price": "₹1155" },
-            { "company": "Mobicrown", "model": "Oppo Reno S2 Line / Reno7 5G / Reno8 / Reno8 Pro 5G", "battery_model": "BLP885", "price": "₹1155" },
-            { "company": "Mobicrown", "model": "Oppo A87 / Neo8 / Neo7", "battery_model": "BLP615", "price": "₹385" },
-            { "company": "Mobicrown", "model": "Oppo Reno Z", "battery_model": "BLP717", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Oppo A CE 2 Lite 5G", "battery_model": "BLP927", "price": "₹638" },
-            { "company": "Mobicrown", "model": "Realme 9 Pro", "battery_model": "BLP911", "price": "₹638" },
-            { "company": "Mobicrown", "model": "Oppo Reno SZ", "battery_model": "BLP839", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Oppo F8 / F8 Pro / Realme 2 Pro", "battery_model": "BLP883", "price": "₹451" },
-            { "company": "Mobicrown", "model": "Realme 7", "battery_model": "BLP807", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Realme X7 Max GT Neo", "battery_model": "BLP837", "price": "₹825" },
-            { "company": "Mobicrown", "model": "Oppo A72 5G / A79 5G", "battery_model": "BLP797", "price": "₹517" },
-            { "company": "Mobicrown", "model": "Realme 7 Pro / Realme X7 Pro, Narzo 20 Pro", "battery_model": "BLP799", "price": "₹1155" },
-            { "company": "Mobicrown", "model": "Oppo A71 / A83", "battery_model": "BLP841", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Oppo A9 / F7", "battery_model": "BLP861", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Oppo F9 / F9 Pro / R17", "battery_model": "BLP861", "price": "₹517" },
-            { "company": "Mobicrown", "model": "Realme U1 / Z Pro", "battery_model": "BLP865", "price": "₹506" },
-            { "company": "Mobicrown", "model": "Oppo R15x", "battery_model": "BLP888", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Oppo A85 / Realme X", "battery_model": "BLP701", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Oppo Reno 4", "battery_model": "BLP735", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Oppo Reno 4 4G", "battery_model": "BLP791", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Oppo Reno 10x Zoom", "battery_model": "BLP795", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Oppo Reno 5 4G / Reno 5 Line / Reno SZ", "battery_model": "BLP819", "price": "₹759" },
-            { "company": "Mobicrown", "model": "Oppo Reno 5 Pro", "battery_model": "BLP823", "price": "₹979" },
-            { "company": "Mobicrown", "model": "Realme 8 Pro", "battery_model": "BLP837", "price": "₹737" },
-            { "company": "Mobicrown", "model": "Realme 9 4G / Realme 8s 5G / Narzo 80 Pro", "battery_model": "BLP885", "price": "₹627" },
-            { "company": "Mobicrown", "model": "Oppo A86 Reno 7Z / F21 Pro / F21 Pro 5G / F21+ PRO / F21+ Pro 5G", "battery_model": "BLP907", "price": "₹627" },
-            { "company": "Mobicrown", "model": "Realme 10", "battery_model": "BLP967", "price": "₹578" },
-            { "company": "Mobicrown", "model": "Oppo A78", "battery_model": "BLPA07", "price": "₹935" },
-            { "company": "Mobicrown", "model": "Oppo A18", "battery_model": "BLPA21", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Oppo AX7", "battery_model": "BLPA77", "price": "₹550" },
-            { "company": "Mobicrown", "model": "Oppo Reno2 / SE 5G", "battery_model": "BLP865", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Realme GT Neo 3", "battery_model": "BLP919", "price": "₹1529" },
-            { "company": "Mobicrown", "model": "Realme 10 Pro+", "battery_model": "BLP951", "price": "₹880" },
-            { "company": "Mobicrown", "model": "Realme 11 Pro", "battery_model": "BLPA15", "price": "₹880" },
-            { "company": "Mobicrown", "model": "Realme C53 / C63 5G", "battery_model": "BLPA17", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Oppo A5 / A5s", "battery_model": "BLPA19", "price": "₹627" },
-            { "company": "Mobicrown", "model": "Oppo Reno8 Pro 5G / Reno8 Pro+", "battery_model": "BLPB28", "price": "₹1199" },
-            { "company": "Mobicrown", "model": "Oppo Reno8 T 5G / A1 Pro", "battery_model": "BLPB81", "price": "₹979" },
-            { "company": "Mobicrown", "model": "Realme X4 Pro", "battery_model": "BLPB87", "price": "₹990" },
-            { "company": "Mobicrown", "model": "Oppo E9", "battery_model": "BLP805", "price": "₹352" },
-            { "company": "Mobicrown", "model": "Realme X2", "battery_model": "BLPT35", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Realme X2 Pro", "battery_model": "BLPT48", "price": "₹1089" },
-            { "company": "Mobicrown", "model": "Realme X3", "battery_model": "BLPT75", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Oppo Reno5 5G / Reno5 SE", "battery_model": "BLPB111", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Realme 10 Pro", "battery_model": "BLPB88", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Realme X7 Pro", "battery_model": "BLPB79", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Realme Narzo 60 5G", "battery_model": "BLPB99", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Realme C61 / C63", "battery_model": "BLPA83", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Oppo Reno 7", "battery_model": "BLPB89", "price": "₹583" },
-            { "company": "Mobicrown", "model": "Realme 11 5G", "battery_model": "BLPB33", "price": "₹946" },
-            { "company": "Mobicrown", "model": "Oppo Reno 11", "battery_model": "BLPA31", "price": "₹979" },
-            { "company": "Mobicrown", "model": "Realme K12X", "battery_model": "BLPA58", "price": "₹957" },
-            { "company": "Mobicrown", "model": "Oppo Reno 10 / A2 Pro 5G", "battery_model": "BLPA65", "price": "₹671" },
-            { "company": "Mobicrown", "model": "Oppo V16 / Realme X7", "battery_model": "BLPB83", "price": "₹924" },
-            { "company": "Mobicrown", "model": "Realme Narzo 50 / Realme 9", "battery_model": "BLPB65", "price": "₹924" },
-            { "company": "Mobicrown", "model": "Realme GT Neo 2 / GT Pro 2", "battery_model": "BLPB87", "price": "₹1199" },
-            { "company": "Mobicrown", "model": "Realme G12", "battery_model": "BLPB47", "price": "₹1375" },
-            { "company": "Mobicrown", "model": "Realme 12 Pro", "battery_model": "BLPA54", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Realme C61", "battery_model": "BLPB21", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Realme K3 / Realme X", "battery_model": "BLPT15", "price": "₹638" },
-            { "company": "Mobicrown", "model": "Oppo Reno 12F", "battery_model": "BLPA79", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Oppo Reno 6D Pro+", "battery_model": "BLPB93", "price": "₹1210" },
-            { "company": "Mobicrown", "model": "Realme 9 5G", "battery_model": "BLPB79", "price": "₹682" },
-            { "company": "Mobicrown", "model": "Realme 9 5G", "battery_model": "BLPB08", "price": "₹660" },
-            { "company": "Mobicrown", "model": "Realme GT 5G / GT Master Explorer Edition", "battery_model": "BLPB49", "price": "₹1199" },
-            { "company": "Mobicrown", "model": "Oppo Reno 4 5G", "battery_model": "BLPB78", "price": "₹1188" },
-            { "company": "Mobicrown", "model": "Oppo F25 Pro 5G / Reno11 F 5G", "battery_model": "BLPA41", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Oppo Reno 4 5G", "battery_model": "BLPB78", "price": "₹495" },
-
-            // MI
-            { "company": "Mobicrown", "model": "Mi 6 Pro", "battery_model": "BM47", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Mi 7A", "battery_model": "BM49", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Note 6 Pro / Note 5 Pro", "battery_model": "BM48", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Mi Y3 / M7 / Note 8", "battery_model": "BM46", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Note 8 Pro", "battery_model": "BM41", "price": "₹484" },
-            { "company": "Mobicrown", "model": "K20 / K20 Pro / M9T", "battery_model": "BP40", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Note 9", "battery_model": "BN54", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Mi 8 / 8A", "battery_model": "BN51", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Note 7 / Note 7 Pro", "battery_model": "BNAA", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Note 9 Pro / Note 9S", "battery_model": "BN52", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Note 4 / Note 4X", "battery_model": "BNA3", "price": "₹457" },
-            { "company": "Mobicrown", "model": "M14A", "battery_model": "BN30", "price": "₹413" },
-            { "company": "Mobicrown", "model": "Mi 9A / 9C / Poco M2 Pro / Poco M2", "battery_model": "BN56", "price": "₹512" },
-            { "company": "Mobicrown", "model": "Mi 35 / M4X", "battery_model": "BM47", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Mi 5A", "battery_model": "BN34", "price": "₹402" },
-            { "company": "Mobicrown", "model": "Note 10 Pro", "battery_model": "BN45", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Note 5", "battery_model": "BN44", "price": "₹457" },
-            { "company": "Mobicrown", "model": "N6", "battery_model": "BN35", "price": "₹402" },
-            { "company": "Mobicrown", "model": "Mi A4 / Mi A3", "battery_model": "BN37", "price": "₹402" },
-            { "company": "Mobicrown", "model": "Mi 11 Lite / Mi 11 Line / Mi 12 Lite", "battery_model": "BN31", "price": "₹402" },
-            { "company": "Mobicrown", "model": "Poco M3 / Note 9 4G", "battery_model": "BN62", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Mi A3", "battery_model": "BN47", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Note 10 / Note 10S", "battery_model": "BN59", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Note 6 Pro", "battery_model": "BN53", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Note 10 5G", "battery_model": "BN54", "price": "₹523" },
-            { "company": "Mobicrown", "model": "Poco F1", "battery_model": "BN46", "price": "₹457" },
-            { "company": "Mobicrown", "model": "Note 11 / Note 11S", "battery_model": "BN50", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Poco F3", "battery_model": "BN47", "price": "₹506" },
-            { "company": "Mobicrown", "model": "Poco M4 Pro 5G", "battery_model": "BN65", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Poco C40", "battery_model": "BN66", "price": "₹495" },
-            { "company": "Mobicrown", "model": "POCO X3", "battery_model": "BN57", "price": "₹451" },
-            { "company": "Mobicrown", "model": "Mi 11 Lite", "battery_model": "BN42", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Note 8S", "battery_model": "BN55", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Redmi K30 Pro / Poco F2 Pro", "battery_model": "BMA0", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Redmi 10C", "battery_model": "BN5G", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Redmi Note 11E / POCO M4 5G / Redmi 10 5G", "battery_model": "BN5H", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Redmi 10 / Redmi 10 Prime", "battery_model": "BN63", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Redmi K20", "battery_model": "BF41", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Mi 10T / 10T Pro", "battery_model": "BN53", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Note 9T 5G", "battery_model": "BN54", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Redmi 8", "battery_model": "BN58", "price": "₹451" },
-            { "company": "Mobicrown", "model": "Redmi Go Note 7", "battery_model": "BN3A", "price": "₹407" },
-            { "company": "Mobicrown", "model": "Redmi 12C", "battery_model": "BN54", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Redmi 8", "battery_model": "BN5E", "price": "₹396" },
-            { "company": "Mobicrown", "model": "Note 3", "battery_model": "BN46", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Redmi K30", "battery_model": "BN48", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Note 10X / 10X Pro 5G", "battery_model": "BMA5", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Mi 10 5G", "battery_model": "BMAW", "price": "₹539" },
-            { "company": "Mobicrown", "model": "11T Pro", "battery_model": "BN5B", "price": "₹1100" },
-            { "company": "Mobicrown", "model": "Note 11 Pro / POCO X4 Pro / Note 11E", "battery_model": "BN5E", "price": "₹792" },
-            { "company": "Mobicrown", "model": "Redmi Note 12 5G / X6 5G", "battery_model": "BN5J", "price": "₹462" },
-            { "company": "Mobicrown", "model": "Redmi 13C", "battery_model": "BN5O", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Redmi A3", "battery_model": "BN5R", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Note 12 Pro / Poco F5 / X5 Pro", "battery_model": "BP4K", "price": "₹957" },
-            { "company": "Mobicrown", "model": "Note 12", "battery_model": "BN6M", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Poco M4 / A1 New", "battery_model": "BN5F", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Redmi 12 / Redmi 12 5G / POCO M6 Pro 5G", "battery_model": "BN5R", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Note 11 Pro", "battery_model": "BN5A", "price": "₹924" },
-            { "company": "Mobicrown", "model": "11 HyperCharge 5G", "battery_model": "BP47", "price": "₹1232" },
-            { "company": "Mobicrown", "model": "Poco X3", "battery_model": "BN61", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Redmi 10", "battery_model": "BN65", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Mi 10 Lite", "battery_model": "BN4R", "price": "₹473" },
-            { "company": "Mobicrown", "model": "11T", "battery_model": "BN6P", "price": "₹957" },
-            { "company": "Mobicrown", "model": "Xiaomi 11", "battery_model": "BMAX", "price": "₹902" },
-            { "company": "Mobicrown", "model": "11 Pro 5G", "battery_model": "BN65", "price": "₹957" },
-            { "company": "Mobicrown", "model": "REDMI Note 10 Max", "battery_model": "BN5D", "price": "₹473" },
-            { "company": "Mobicrown", "model": "Note 13 5G", "battery_model": "BN5P", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Mi 12X", "battery_model": "BF4B", "price": "₹473" },
-            { "company": "Mobicrown", "model": "Poco F4 GT / Redmi K60", "battery_model": "BN4D", "price": "₹1430" },
-            { "company": "Mobicrown", "model": "Poco F2 Pro / Redmi K30 Pro", "battery_model": "BMA0", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Mi 10X Pro 5G", "battery_model": "BMAT", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Note 10 Lite / Note 10 Pro / CC9 Pro", "battery_model": "BN5Z", "price": "₹715" },
-            { "company": "Mobicrown", "model": "Mi 10", "battery_model": "BMMN", "price": "₹1474" },
-            { "company": "Mobicrown", "model": "Redmi K90 5G", "battery_model": "BMSG", "price": "₹880" },
-            { "company": "Mobicrown", "model": "Redmi 13 4G/5G / Poco M6", "battery_model": "BNST", "price": "₹550" },
-            { "company": "Mobicrown", "model": "Redmi Note 11 5G", "battery_model": "BNSJ", "price": "₹440" },
-            { "company": "Mobicrown", "model": "Redmi 14C / Redmi 12C", "battery_model": "RISKX", "price": "₹550" },
-            { "company": "Mobicrown", "model": "Redmi Note 13 Pro 5G / Poco X6 5G", "battery_model": "BMSV", "price": "₹1034" },
-            { "company": "Mobicrown", "model": "Poco F4 5G", "battery_model": "BP49", "price": "₹440" },
-
-            // SAMSUNG
-            { "company": "SAMSUNG", "model": "A025 / A02 / N02", "battery_model": "HQ-5S5", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "A035 / A03", "battery_model": "HQS0", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "A31 / A32 4G / A22 4G / F22 4G / A31s", "battery_model": "EB-BA315ABY", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "J4K / J6k / J7max / J7prime / ON/ / ONN NEXT", "battery_model": "EB-BG510ABE", "price": "₹418" },
-            { "company": "SAMSUNG", "model": "M315", "battery_model": "EB-BH37ABY", "price": "₹594" },
-            { "company": "SAMSUNG", "model": "M30 / M20", "battery_model": "EB-BG580ABU", "price": "₹512" },
-            { "company": "SAMSUNG", "model": "A51", "battery_model": "EB-BA515ABY", "price": "₹473" },
-            { "company": "SAMSUNG", "model": "M31 / M36S / M21 / M26S", "battery_model": "EB-BH37ABY", "price": "₹578" },
-            { "company": "SAMSUNG", "model": "A70 / EB-BA750ABU", "battery_model": "EB-BA750ABU", "price": "₹468" },
-            { "company": "SAMSUNG", "model": "A71/Eb-BA715ABU", "battery_model": "EB-BA715ABY", "price": "₹484" },
-            { "company": "SAMSUNG", "model": "J2", "battery_model": "EB-BG530CBN", "price": "₹275" },
-            { "company": "SAMSUNG", "model": "A50s / A30e / A30 / A50 / A20", "battery_model": "EB-BA505ABU", "price": "₹468" },
-            { "company": "SAMSUNG", "model": "A60s / A16S / WT-N6", "battery_model": "SCUD-WT-N6", "price": "₹451" },
-            { "company": "SAMSUNG", "model": "J5 / J3 10 / J3 / Azone / I2core / G330", "battery_model": "EB-BG530CBN", "price": "₹248" },
-            { "company": "SAMSUNG", "model": "A11 / H070M", "battery_model": "HQ-70N", "price": "₹468" },
-            { "company": "SAMSUNG", "model": "J7 / J4 / J7next", "battery_model": "EB-BJ700CBN", "price": "₹330" },
-            { "company": "SAMSUNG", "model": "J510", "battery_model": "EB-BJ510CEB", "price": "₹330" },
-            { "company": "SAMSUNG", "model": "H11 / H0571", "battery_model": "EB-BG570F", "price": "₹512" },
-            { "company": "SAMSUNG", "model": "S9 / EB60600ABE", "battery_model": "EB-BG660ABE", "price": "₹468" },
-            { "company": "SAMSUNG", "model": "S9+ / EB66965ABE", "battery_model": "EB-BG695ABE", "price": "₹484" },
-            { "company": "SAMSUNG", "model": "M01core / EBBA0113ABY", "battery_model": "EB-BG530BE", "price": "₹374" },
-            { "company": "SAMSUNG", "model": "M06 / A60", "battery_model": "EB-BA606ABU", "price": "₹457" },
-            { "company": "SAMSUNG", "model": "SAW 15h", "battery_model": "EB-BG675ABU", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "SAW S10", "battery_model": "EB-BG673ABU", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "A10 / M10 / A750", "battery_model": "EB-BA750ABU", "price": "₹424" },
-            { "company": "SAMSUNG", "model": "A62 / B2 / B8", "battery_model": "EB-BB020ABE", "price": "₹429" },
-            { "company": "SAMSUNG", "model": "F12 / F41", "battery_model": "EB-BB07ABY", "price": "₹605" },
-            { "company": "SAMSUNG", "model": "A8 - J8", "battery_model": "EB-BB05ABE", "price": "₹457" },
-            { "company": "SAMSUNG", "model": "AZ15 / AZ2 / AZ1 / MT3", "battery_model": "EB-BA217ABY", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "A82", "battery_model": "EB-BG781ABY", "price": "₹506" },
-            { "company": "SAMSUNG", "model": "PZ2 / MS1", "battery_model": "EB-BM115ABY", "price": "₹561" },
-            { "company": "SAMSUNG", "model": "M01", "battery_model": "EB-MD16-G1N", "price": "₹462" },
-            { "company": "SAMSUNG", "model": "A42 / A32 / AZ2 6G", "battery_model": "EB-BA426ABY", "price": "₹561" },
-            { "company": "SAMSUNG", "model": "A01", "battery_model": "SH-A015F", "price": "₹407" },
-            { "company": "SAMSUNG", "model": "J700", "battery_model": "L700", "price": "₹165" },
-            { "company": "SAMSUNG", "model": "A39 6G", "battery_model": "EB-BA336ABY", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "S21 FE 5G", "battery_model": "EB-BG690ABY", "price": "₹517" },
-            { "company": "SAMSUNG", "model": "S21 5G", "battery_model": "EB-BG691ABY", "price": "₹528" },
-            { "company": "SAMSUNG", "model": "M32", "battery_model": "EB-BM325ABY", "price": "₹605" },
-            { "company": "SAMSUNG", "model": "A23 6G / A23 5G / M33 / M52 5G / M53 5G / A23 4G", "battery_model": "EB-BH526ABS", "price": "₹561" },
-            { "company": "SAMSUNG", "model": "A22 5G / F42", "battery_model": "SCUD-WT-W1", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "AM / AME / M04", "battery_model": "WT-S-W1", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "X200", "battery_model": "X200", "price": "₹132" },
-            { "company": "SAMSUNG", "model": "J5 PRIME", "battery_model": "EB-BG570ABE", "price": "₹407" },
-            { "company": "SAMSUNG", "model": "NOT E 8", "battery_model": "EB-BH520ABA", "price": "₹451" },
-            { "company": "SAMSUNG", "model": "A05", "battery_model": "WT-S-K128", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "A33 5G", "battery_model": "EB-BA536ABY", "price": "₹550" },
-            { "company": "SAMSUNG", "model": "A15", "battery_model": "EB-BA156ABY", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "S20 FE / A62", "battery_model": "EB-BA525ABY", "price": "₹517" },
-            { "company": "SAMSUNG", "model": "JAS 5G / A34 5G / A25 5G", "battery_model": "EB-BA546ABY", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "F23 5G / M52 5G / M53 5G / M23 5G / M33 5G / A73 5G / A23 / A33", "battery_model": "EB-BH526ABY", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "Note 9", "battery_model": "EB-BN965ABU", "price": "₹517" },
-            { "company": "SAMSUNG", "model": "A03 Core", "battery_model": "SLC-50", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "A06s", "battery_model": "SLC-51", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "M15 / M35", "battery_model": "EB-BM156ABY", "price": "₹627" },
-            { "company": "SAMSUNG", "model": "S8", "battery_model": "EB-BG950ABE", "price": "₹462" },
-            { "company": "SAMSUNG", "model": "S8+", "battery_model": "EB-BG955ABA", "price": "₹539" },
-            { "company": "SAMSUNG", "model": "S10 LITE", "battery_model": "EB-BG975ABU", "price": "₹495" },
-            { "company": "SAMSUNG", "model": "S6 EDGE", "battery_model": "EB-BG925ABE", "price": "₹407" },
-            { "company": "SAMSUNG", "model": "SAM A24", "battery_model": "EB-BA245ABY", "price": "₹517" },
-            { "company": "SAMSUNG", "model": "A22 5G", "battery_model": "EB-BA226ABY", "price": "₹561" },
-            { "company": "SAMSUNG", "model": "S21 Ultra", "battery_model": "EB-BG998ABY", "price": "₹561" },
-            { "company": "SAMSUNG", "model": "S22 Ultra 5G", "battery_model": "EB-BS908ABY", "price": "₹616" },
-            { "company": "SAMSUNG", "model": "S20 ULTRA", "battery_model": "EB-BG988ABY", "price": "₹616" },
-            { "company": "SAMSUNG", "model": "NOTE20", "battery_model": "EB-BN985ABY", "price": "₹594" },
-            { "company": "SAMSUNG", "model": "M14 / M34 / F54 / M54", "battery_model": "EB-BM146ABY", "price": "₹638" },
-            { "company": "SAMSUNG", "model": "On8 / J710", "battery_model": "J710", "price": "₹319" },
-            { "company": "SAMSUNG", "model": "S24 ULTRA", "battery_model": "EB-BS928ABY", "price": "₹704" },
-            { "company": "SAMSUNG", "model": "A13 5G", "battery_model": "EB-BA136ABY", "price": "₹605" },
-
-            // IPHONE (SUPER CAPACITY - 120%)
-            { "company": "Mobicrown", "model": "iPhone 5", "battery_model": "5G", "price": "₹413" },
-            { "company": "Mobicrown", "model": "iPhone 5S", "battery_model": "5S", "price": "₹451" },
-            { "company": "Mobicrown", "model": "iPhone SE 1st Gen", "battery_model": "5SE", "price": "₹457" },
-            { "company": "Mobicrown", "model": "iPhone 6", "battery_model": "6G", "price": "₹495" },
-            { "company": "Mobicrown", "model": "iPhone 6 Plus", "battery_model": "6+", "price": "₹605" },
-            { "company": "Mobicrown", "model": "iPhone 6s", "battery_model": "6s", "price": "₹495" },
-            { "company": "Mobicrown", "model": "iPhone 6s Plus", "battery_model": "6S+", "price": "₹605" },
-            { "company": "Mobicrown", "model": "iPhone 7", "battery_model": "7G", "price": "₹523" },
-            { "company": "Mobicrown", "model": "iPhone 7 Plus", "battery_model": "7+", "price": "₹605" },
-            { "company": "Mobicrown", "model": "iPhone 8", "battery_model": "8G", "price": "₹539" },
-            { "company": "Mobicrown", "model": "iPhone 8 Plus", "battery_model": "8+", "price": "₹594" },
-            { "company": "Mobicrown", "model": "iPhone X", "battery_model": "X", "price": "₹825" },
-            { "company": "Mobicrown", "model": "iPhone XR", "battery_model": "XR", "price": "₹825" },
-            { "company": "Mobicrown", "model": "iPhone XS", "battery_model": "XS", "price": "₹968" },
-            { "company": "Mobicrown", "model": "iPhone SE 2020", "battery_model": "SE 2020", "price": "₹523" },
-            { "company": "Mobicrown", "model": "iPhone XS Max", "battery_model": "XS Max", "price": "₹880" },
-            { "company": "Mobicrown", "model": "iPhone 11", "battery_model": "11", "price": "₹825" },
-            { "company": "Mobicrown", "model": "iPhone 11 Pro", "battery_model": "11 Pro", "price": "₹1045" },
-            { "company": "Mobicrown", "model": "iPhone 11 Pro Max", "battery_model": "11 Pro Max", "price": "₹1375" },
-            { "company": "Mobicrown", "model": "iPhone 12 Mini", "battery_model": "12 MINI", "price": "₹825" },
-            { "company": "Mobicrown", "model": "iPhone 12", "battery_model": "12", "price": "₹935" },
-            { "company": "Mobicrown", "model": "iPhone 12 Pro", "battery_model": "12 PRO", "price": "₹935" },
-            { "company": "Mobicrown", "model": "iPhone 12 Pro Max", "battery_model": "12 PRO MAX", "price": "₹1485" },
-            { "company": "Mobicrown", "model": "iPhone 13", "battery_model": "13", "price": "₹1111" },
-            { "company": "Mobicrown", "model": "iPhone 13 Mini", "battery_model": "13MINI", "price": "₹957" },
-            { "company": "Mobicrown", "model": "iPhone 13 Pro", "battery_model": "13 PRO", "price": "₹1375" },
-            { "company": "Mobicrown", "model": "iPhone 13 Pro Max", "battery_model": "13 Pro Max", "price": "₹1485" },
-            { "company": "Mobicrown", "model": "iPhone 14", "battery_model": "14", "price": "₹1089" },
-            { "company": "Mobicrown", "model": "iPhone 14 Pro", "battery_model": "14PRO", "price": "₹1485" },
-            { "company": "Mobicrown", "model": "iPhone 14 Plus", "battery_model": "14+", "price": "₹1419" },
-            { "company": "Mobicrown", "model": "iPhone 14 Pro Max", "battery_model": "14PROMAX", "price": "₹1485" },
-            { "company": "Mobicrown", "model": "iPhone 15", "battery_model": "15", "price": "₹1672" },
-            { "company": "Mobicrown", "model": "iPhone 15 Pro", "battery_model": "15PRO", "price": "₹1969" },
-            { "company": "Mobicrown", "model": "iPhone 15 Plus", "battery_model": "15+", "price": "₹1749" },
-            { "company": "Mobicrown", "model": "iPhone 15 Pro Max", "battery_model": "15PROMAX", "price": "₹2178" },
-
-            // IPHONE CELL-120%
-            { "company": "Mobicrown", "model": "iPhone 11", "battery_model": "11 CELL", "price": "₹396" },
-            { "company": "Mobicrown", "model": "iPhone 11 Pro", "battery_model": "11 PRO CELL", "price": "₹572" },
-            { "company": "Mobicrown", "model": "iPhone 11 Pro Max", "battery_model": "11 PRO MAX CELL", "price": "₹660" },
-            { "company": "Mobicrown", "model": "iPhone 12", "battery_model": "12 CELL", "price": "₹385" },
-            { "company": "Mobicrown", "model": "iPhone 12 Pro Max", "battery_model": "12 PRO MAX CELL", "price": "₹616" },
-            { "company": "Mobicrown", "model": "iPhone 13", "battery_model": "13 CELL", "price": "₹429" },
-            { "company": "Mobicrown", "model": "iPhone 14 Pro Max", "battery_model": "14 PRO MAX CELL", "price": "₹869" },
-            { "company": "Mobicrown", "model": "iPhone XS", "battery_model": "XS CELL", "price": "₹495" },
-
-            //  IPHONE CELL 100%
-            { "company": "Mobicrown", "model": "iPhone 11", "battery_model": "11 CELL", "price": "₹330" },
-            { "company": "Mobicrown", "model": "iPhone 11 Pro", "battery_model": "11 Pro CELL", "price": "₹495" },
-            { "company": "Mobicrown", "model": "iPhone 11 Pro Max", "battery_model": "11 Pro Max CELL", "price": "₹561" },
-            { "company": "Mobicrown", "model": "iPhone 12 / 12 Pro", "battery_model": "12/12 Pro CELL", "price": "₹330" },
-            { "company": "Mobicrown", "model": "iPhone 12 Pro Max", "battery_model": "12 Pro Max CELL", "price": "₹561" },
-            { "company": "Mobicrown", "model": "iPhone 13", "battery_model": "13 CELL", "price": "₹385" },
-            { "company": "Mobicrown", "model": "iPhone 13 Pro", "battery_model": "13 Pro CELL", "price": "₹550" },
-            { "company": "Mobicrown", "model": "iPhone 13 Pro Max", "battery_model": "13 Pro Max CELL", "price": "₹594" },
-            { "company": "Mobicrown", "model": "iPhone 13 Mini", "battery_model": "13 Mini CELL", "price": "₹319" },
-            { "company": "Mobicrown", "model": "iPhone 14", "battery_model": "14 CELL", "price": "₹440" },
-            { "company": "Mobicrown", "model": "iPhone 14 Plus", "battery_model": "14 Plus CELL", "price": "₹484" },
-            { "company": "Mobicrown", "model": "iPhone 14 Pro", "battery_model": "14 Pro CELL", "price": "₹704" },
-            { "company": "Mobicrown", "model": "iPhone 14 Pro Max", "battery_model": "14 Pro Max CELL", "price": "₹616" },
-            { "company": "Mobicrown", "model": "iPhone 15", "battery_model": "15 CELL", "price": "₹451" },
-            { "company": "Mobicrown", "model": "iPhone 15 Plus", "battery_model": "15 Plus CELL", "price": "₹484" },
-            { "company": "Mobicrown", "model": "iPhone 15 Pro", "battery_model": "15 Pro CELL", "price": "₹726" },
-            { "company": "Mobicrown", "model": "iPhone 15 Pro Max", "battery_model": "15 Pro Max CELL", "price": "₹748" },
-            { "company": "Mobicrown", "model": "iPhone 16 Pro Max", "battery_model": "16 Pro Max CELL", "price": "₹946" },
-
-            // Oneplus
-            { "company": "Mobicrown", "model": "OnePlus 6T / 7", "battery_model": "BLP685", "price": "₹539" },
-            { "company": "Mobicrown", "model": "OnePlus NORD", "battery_model": "BLP785", "price": "₹550" },
-            { "company": "Mobicrown", "model": "OnePlus 8", "battery_model": "BLP761", "price": "₹578" },
-            { "company": "Mobicrown", "model": "OnePlus 8 PRO", "battery_model": "BLP759", "price": "₹605" },
-            { "company": "Mobicrown", "model": "OnePlus 5T", "battery_model": "BLP637", "price": "₹523" },
-            { "company": "Mobicrown", "model": "OnePlus 7 PRO", "battery_model": "BLP699", "price": "₹567" },
-            { "company": "Mobicrown", "model": "OnePlus 8T", "battery_model": "BLP801", "price": "₹1155" },
-            { "company": "Mobicrown", "model": "OnePlus 9 Pro 5G", "battery_model": "BLP827", "price": "₹1265" },
-            { "company": "Mobicrown", "model": "OnePlus Nord 2 5G", "battery_model": "BLP861", "price": "₹1155" },
-            { "company": "Mobicrown", "model": "OnePlus 9", "battery_model": "BLP829", "price": "₹1265" },
-            { "company": "Mobicrown", "model": "OnePlus Nord CE 5G", "battery_model": "BLP845", "price": "₹825" },
-            { "company": "Mobicrown", "model": "ONEPLUS 6", "battery_model": "BLP657", "price": "₹506" },
-            { "company": "Mobicrown", "model": "ONEPLUS NORD CE2 LITE", "battery_model": "BLP927", "price": "₹638" },
-            { "company": "Mobicrown", "model": "OnePlus 3", "battery_model": "BLP813", "price": "₹506" },
-            { "company": "Mobicrown", "model": "OnePlus 3T", "battery_model": "BLP833", "price": "₹495" },
-            { "company": "Mobicrown", "model": "OnePlus 7T", "battery_model": "BLP743", "price": "₹561" },
-            { "company": "Mobicrown", "model": "OnePlus 10R 5G", "battery_model": "BLP925", "price": "₹1199" },
-            { "company": "Mobicrown", "model": "Nord N100", "battery_model": "BLP913", "price": "₹528" },
-            { "company": "Mobicrown", "model": "Nord N10 5G", "battery_model": "BLP815", "price": "₹572" },
-            { "company": "Mobicrown", "model": "Nord CE 3 Line 5G", "battery_model": "BLP889", "price": "₹858" },
-            { "company": "Mobicrown", "model": "OnePlus 7T pro", "battery_model": "BLP745", "price": "₹605" },
-            { "company": "Mobicrown", "model": "OnePlus 9 Pro", "battery_model": "BLP903", "price": "₹1122" },
-            { "company": "Mobicrown", "model": "OnePlus ACE3 / OnePlus NORD CE 4", "battery_model": "BLPA45", "price": "₹1265" },
-            { "company": "Mobicrown", "model": "NORD 4", "battery_model": "BLPA75", "price": "₹572" },
-            { "company": "Mobicrown", "model": "ONEPLUS 11", "battery_model": "BLPA97", "price": "₹1309" },
-            { "company": "Mobicrown", "model": "OnePlus 12R", "battery_model": "BLP975", "price": "₹1309" },
-            { "company": "Mobicrown", "model": "OnePlus 10T 5G / OnePlus Ace Pro", "battery_model": "BLPA33", "price": "₹1419" },
-
-            // TECHNO/INFINIX
-            { "company": "Mobicrown", "model": "CAMON 115 / CAMON 14 / KB3 / CB7", "battery_model": "34CT", "price": "₹457" },
-            { "company": "Mobicrown", "model": "IS PRO / 13 / I7", "battery_model": "39BT", "price": "₹457" },
-            { "company": "Mobicrown", "model": "IS", "battery_model": "39CT", "price": "₹457" },
-            { "company": "Mobicrown", "model": "ID PRO", "battery_model": "30UT", "price": "₹429" },
-            { "company": "Mobicrown", "model": "CAMON 1 AIR 2+", "battery_model": "36BT", "price": "₹457" },
-            { "company": "Mobicrown", "model": "SPARK 4 PRO / KCB", "battery_model": "39LT", "price": "₹457" },
-            { "company": "Mobicrown", "model": "X652 / X690 / X693 / KE5", "battery_model": "49GX", "price": "₹539" },
-            { "company": "Mobicrown", "model": "S4 / Hot 7 Pro / X626 / X626B / X625D", "battery_model": "39KX", "price": "₹457" },
-            { "company": "Mobicrown", "model": "X680 / Hot 9 Play / Hot10Play / X688B / X686C / Smart 5", "battery_model": "588X", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Smart 4 / S5 / X652 / X653", "battery_model": "39LX", "price": "₹484" },
-            { "company": "Mobicrown", "model": "Note 11 / NOTE 12 / Note 12 Pro 5G / Turbo / X663 / X670/X671/X676/X677", "battery_model": "49KX", "price": "₹539" },
-            { "company": "Mobicrown", "model": "CAMON17 / CGG / CG7", "battery_model": "49GT", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Tecno Pop 7 / BF6 / Spark Go 2023 / BF7 / Spark Go 2024 / BG6", "battery_model": "49NT", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Hot 30 (X668, X689C) / Smart 7 (X6516) / Smart 8 (X6525)", "battery_model": "49NX", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Note 8 / X662 / Hot 10 / X662", "battery_model": "51BX", "price": "₹539" },
-            { "company": "Mobicrown", "model": "POUVON 4 PRO / Spark 6 Air", "battery_model": "58BT", "price": "₹583" },
-            { "company": "Mobicrown", "model": "Hot 8 / X660C / X660B / X650D", "battery_model": "49FX", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Pova 2 / LET / Pova 3 / LETn", "battery_model": "68AT", "price": "₹748" },
-            { "company": "Mobicrown", "model": "Hot 83", "battery_model": "39GT", "price": "₹473" },
-            { "company": "Mobicrown", "model": "CAMON 19", "battery_model": "49LT", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Camon 20 / Camon 20 Pro / Spark 20 Pro+", "battery_model": "49OT", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Spark 7 Pro / Spark 6 Go / Spark Go 2020 / Camon 15 / Camon 15 Air", "battery_model": "49FT", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Spark 7", "battery_model": "58CT", "price": "₹616" },
-            { "company": "Mobicrown", "model": "Tecno i5", "battery_model": "30VT", "price": "₹429" },
-            { "company": "Mobicrown", "model": "Note 30 5G", "battery_model": "49TX", "price": "₹627" },
-            { "company": "Mobicrown", "model": "Hot 11 / X675", "battery_model": "48DX", "price": "₹583" },
-            { "company": "Mobicrown", "model": "Smart HD 2021", "battery_model": "49IX", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Pova 5", "battery_model": "58ET", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Note 10 Pro / Note 115 / ZERO 5G", "battery_model": "49JX", "price": "₹649" },
-            { "company": "Mobicrown", "model": "Spark 6 (KET) / Camon 16", "battery_model": "49HT", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Hot 30 5G (X8832) / Smart 7 (X8517) / Hot 10i", "battery_model": "58CX", "price": "₹682" },
-            { "company": "Mobicrown", "model": "SPARK GO 1", "battery_model": "49NT", "price": "₹539" },
-
-            // Nokia
-            { "company": "Mobicrown", "model": "Nokia 7", "battery_model": "HE340", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Nokia 6.1 Plus / Nokia 5.1 Plus / Nokia X5", "battery_model": "HE342", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Nokia 3.2", "battery_model": "WT240", "price": "₹495" },
-            { "company": "Mobicrown", "model": "Nokia 3.1", "battery_model": "HE336", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Nokia 3.1 Plus", "battery_model": "HE363", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Nokia 6.1", "battery_model": "HE345", "price": "₹418" },
-            { "company": "Mobicrown", "model": "NOKIA G10 / G20", "battery_model": "WT340", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Nokia 4C", "battery_model": "BL-4C", "price": "₹132" },
-            { "company": "Mobicrown", "model": "Nokia 5C", "battery_model": "BL-5C", "price": "₹132" },
-            { "company": "Mobicrown", "model": "Nokia 2", "battery_model": "HE338", "price": "₹451" },
-            { "company": "Mobicrown", "model": "Nokia 6.2", "battery_model": "LC620", "price": "₹435" },
-            { "company": "Mobicrown", "model": "Nokia 4.2", "battery_model": "WT330", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Nokia 3", "battery_model": "HE319", "price": "₹418" },
-
-            // Google
-            { "company": "Mobicrown", "model": "PIXEL 8 PRO", "battery_model": "PIXEL 8 PRO", "price": "₹924" },
-            { "company": "Mobicrown", "model": "PIXEL 3", "battery_model": "PIXEL 3", "price": "₹605" },
-            { "company": "Mobicrown", "model": "PIXEL 3A", "battery_model": "PIXEL 3A", "price": "₹649" },
-            { "company": "Mobicrown", "model": "PIXEL 4", "battery_model": "PIXEL 4", "price": "₹704" },
-            { "company": "Mobicrown", "model": "PIXEL 4A", "battery_model": "PIXEL 4A", "price": "₹792" },
-            { "company": "Mobicrown", "model": "PIXEL 5", "battery_model": "PIXEL 5", "price": "₹924" },
-            { "company": "Mobicrown", "model": "PIXEL 5A", "battery_model": "PIXEL 5A", "price": "₹748" },
-            { "company": "Mobicrown", "model": "PIXEL 6", "battery_model": "PIXEL 6", "price": "₹748" },
-            { "company": "Mobicrown", "model": "PIXEL 6A", "battery_model": "PIXEL 6A", "price": "₹748" },
-            { "company": "Mobicrown", "model": "PIXEL 6 PRO", "battery_model": "PIXEL 6 PRO", "price": "₹748" },
-            { "company": "Mobicrown", "model": "PIXEL 7", "battery_model": "PIXEL 7", "price": "₹814" },
-            { "company": "Mobicrown", "model": "PIXEL 7A", "battery_model": "PIXEL 7A", "price": "₹814" },
-            { "company": "Mobicrown", "model": "PIXEL 7 PRO", "battery_model": "PIXEL 7 PRO", "price": "₹814" },
-            { "company": "Mobicrown", "model": "PIXEL 8", "battery_model": "PIXEL 8", "price": "₹924" },
-
-            // Moto
-            { "company": "Mobicrown", "model": "Moto G5 Plus / X11635 / X11687 / X11684 / X11686", "battery_model": "HG40", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Moto G5S+ / G5S / G6", "battery_model": "HG30", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Moto Edge 20 Lite", "battery_model": "NT50", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Moto E5 Plus / E4 Plus", "battery_model": "HE50", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Moto One Power P30 Note X11942-1 X11942-2 / G7 Power X11955", "battery_model": "JK50", "price": "₹517" },
-            { "company": "Mobicrown", "model": "Moto One Fusion Plus", "battery_model": "LG50", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Moto G40 Fusion / Moto G9 Power", "battery_model": "MC50", "price": "₹644" },
-            { "company": "Mobicrown", "model": "Moto G22", "battery_model": "NH50", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Moto C", "battery_model": "HC40", "price": "₹308" },
-            { "company": "Mobicrown", "model": "Moto C Plus", "battery_model": "HC60", "price": "₹319" },
-            { "company": "Mobicrown", "model": "Moto E6 Plus / E6S", "battery_model": "KC40", "price": "₹330" },
-            { "company": "Mobicrown", "model": "Moto G60 / G10 Power", "battery_model": "MH60", "price": "₹638" },
-            { "company": "Mobicrown", "model": "Moto G54", "battery_model": "PC60", "price": "₹605" },
-            { "company": "Mobicrown", "model": "Moto G84 5G", "battery_model": "QB50", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Moto E4 Plus", "battery_model": "QF50", "price": "₹561" },
-            { "company": "Mobicrown", "model": "Moto G9 / E4", "battery_model": "GK40", "price": "₹330" },
-            { "company": "Mobicrown", "model": "Moto G41 / Moto G32", "battery_model": "NC50", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Moto Edge 50 Fusion", "battery_model": "QC50", "price": "₹902" },
-            { "company": "Mobicrown", "model": "Moto G31 / G42 / G62", "battery_model": "ND50", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Moto G52 / G72 / G82", "battery_model": "NE50", "price": "₹583" },
-            { "company": "Mobicrown", "model": "Moto Edge 40 and Edge 30 Fusion", "battery_model": "NP44", "price": "₹671" },
-            { "company": "Mobicrown", "model": "Moto G14 / G84", "battery_model": "PC50", "price": "₹594" },
-
-            // Honor
-            { "company": "Mobicrown", "model": "Honor 9N / 8 / 7A / 9LITE / 7C / 5C / 8LITE / P20LITE / P9", "battery_model": "HB366481ECW", "price": "₹407" },
-            { "company": "Mobicrown", "model": "Honor 10 LITE / Honor 20 / Honor 10", "battery_model": "HB396286ECW", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Mate 10 Lite P30 Lite G10 / Nova 2 Plus 2i 3i 4e / 9i 7X / Mate SE", "battery_model": "HB356687ECW", "price": "₹418" },
-            { "company": "Mobicrown", "model": "Honor 8X", "battery_model": "HB38669DECW", "price": "₹473" },
-            { "company": "Mobicrown", "model": "Huawei Mate 9", "battery_model": "HB39668DECW", "price": "₹473" },
-
-            // Itel
-            { "company": "Mobicrown", "model": "Itel One Vision / A58", "battery_model": "BL-39L1", "price": "₹468" },
-            { "company": "Mobicrown", "model": "Itel Magic 1 Max / IIS250 / I07100 / ITS233 / IIS040 / IIS320 / IIS231", "battery_model": "BL-19C1", "price": "₹231" },
-            { "company": "Mobicrown", "model": "Itel A23", "battery_model": "BL-20H1", "price": "₹264" },
-            { "company": "Mobicrown", "model": "Itel IT-5600", "battery_model": "BL-25B1", "price": "₹226" },
-            { "company": "Mobicrown", "model": "Itel A36", "battery_model": "BL-29C1", "price": "₹286" },
-            { "company": "Mobicrown", "model": "Itel A55 / S15", "battery_model": "BL-29B1", "price": "₹385" },
-            { "company": "Mobicrown", "model": "Itel A23 Pro / IT 1508 / A.41 / A.40 / A.44 Pro / A.41 Plus / A.44 / A.44Air / A46", "battery_model": "BL-24E1", "price": "₹330" },
-            { "company": "Mobicrown", "model": "Itel A60", "battery_model": "BL-49N1", "price": "₹539" },
-            { "company": "Mobicrown", "model": "Itel P40", "battery_model": "BL-58C1", "price": "₹594" },
-            { "company": "Mobicrown", "model": "Itel A58 / A58 Pro / A27 / A49", "battery_model": "38C1", "price": "₹407" },
-
-            // Microsoft
-            { "company": "Mobicrown", "model": "INNOTE", "battery_model": "INaB", "price": "₹539" },
-            { "company": "Mobicrown", "model": "TAOES", "battery_model": "IJACBPN50M06", "price": "₹578" },
-            { "company": "Mobicrown", "model": "IN2", "battery_model": "ACMPN5OMO6", "price": "₹578" },
-            // Asus
-            { "company": "Mobicrown", "model": "Asus Zenfone Max Pro M2", "battery_model": "CllP1706", "price": "₹462" },
-            { "company": "Mobicrown", "model": "Asus Zenfone Max M2", "battery_model": "CllP1707", "price": "₹484" },
-
-            // Jio
-            { "company": "Mobicrown", "model": "Jio Phone Next", "battery_model": "JIONEXT", "price": "₹286" },
-
-            // Nothing
-            { "company": "Mobicrown", "model": "NOTHING PHONE 1", "battery_model": "NTO1", "price": "₹484" },
-
-            // Lenovo
-            { "company": "Mobicrown", "model": "K8 Note", "battery_model": "BL270", "price": "₹473" },
-            { "company": "Mobicrown", "model": "K8 Plus", "battery_model": "BL273", "price": "₹429" },
-
-            // Lava
-            { "company": "Mobicrown", "model": "Lava A31 A1200", "battery_model": "LEB023", "price": "₹242" },
-            { "company": "Mobicrown", "model": "Lava", "battery_model": "LEBO24", "price": "₹264" },
-            { "company": "Mobicrown", "model": "LAVA Z3", "battery_model": "LBP14900072", "price": "₹539" },
-            { "company": "Mobicrown", "model": "LAVA Z61", "battery_model": "Z61", "price": "₹330" },
-            { "company": "Mobicrown", "model": "LAVA Z66", "battery_model": "Z66", "price": "₹539" },
-
-            // Tab Battery
-            { "company": "Mobicrown", "model": "T225", "battery_model": "7225", "price": "₹836" },
-            { "company": "Mobicrown", "model": "T295", "battery_model": "WTN8", "price": "₹836" },
-
-            // PILOT (LITHIUM BATTERIES)
-            { "company": "Mobicrown", "model": "SC ERROR", "battery_model": "SC ERROR", "price": "₹83" },
-            { "company": "Mobicrown", "model": "X200", "battery_model": "X200", "price": "₹77" },
-            { "company": "Mobicrown", "model": "LEB023", "battery_model": "LEB023", "price": "₹154" },
-            { "company": "Mobicrown", "model": "LEB024", "battery_model": "LEB024", "price": "₹110" },
-            { "company": "Mobicrown", "model": "JIO WIFI ROUTER", "battery_model": "JIO WIFI ROUTER", "price": "₹187" },
-            { "company": "Mobicrown", "model": "4UL", "battery_model": "4UL", "price": "₹160" },
-            { "company": "Mobicrown", "model": "JIO (F90)", "battery_model": "JIO (F90)", "price": "₹105" },
-            { "company": "Mobicrown", "model": "25BI", "battery_model": "25BI", "price": "₹132" },
-            { "company": "Mobicrown", "model": "11DI", "battery_model": "11DI", "price": "₹149" },
-            { "company": "Mobicrown", "model": "12AI", "battery_model": "12AI", "price": "₹154" },
-            { "company": "Mobicrown", "model": "29BI", "battery_model": "29BI", "price": "₹165" }
-
-            // ... (rest of the battery data)
+            { "model": "iPhone 5", "price": "₹-" },
+            { "model": "iPhone 5S", "price": "₹-" },
+            { "model": "iPhone 6", "price": "₹-" },
+            { "model": "iPhone 6 Plus", "price": "₹-" },
+            { "model": "iPhone 6s", "price": "₹-" },
+            { "model": "iPhone 6s Plus", "price": "₹-" },
+            { "model": "iPhone 7", "price": "₹-" },
+            { "model": "iPhone 7 Plus", "price": "₹-" }
         ];
 
         // Sample data for extra items
         const extraItemData = [
             { model: "Charging Port", price: "₹299" },
             { model: "Earpiece Speaker", price: "₹199" },
-            // ... (rest of the extra item data)
+            { model: "Loudspeaker", price: "₹249" },
+            { model: "Vibration Motor", price: "₹149" },
+            { model: "Front Camera", price: "₹399" },
+            { model: "Rear Camera", price: "₹599" },
+            { model: "Power Button", price: "₹179" },
+            { model: "Volume Buttons", price: "₹199" },
+            { model: "Home Button", price: "₹149" },
+            { model: "SIM Tray", price: "₹99" }
         ];
 
         // Sample data for spare parts
         const sparePartsData = [
             { model: "Display Assembly", price: "₹1,299" },
             { model: "Back Cover", price: "₹499" },
-            // ... (rest of the spare parts data)
+            { model: "Motherboard", price: "₹2,999" },
+            { model: "Charging Flex Cable", price: "₹349" },
+            { model: "Battery Connector", price: "₹199" },
+            { model: "Camera Lens", price: "₹299" },
+            { model: "Earpiece Mesh", price: "₹79" },
+            { model: "Speaker Grill", price: "₹89" },
+            { model: "Volume Flex Cable", price: "₹279" },
+            { model: "Power Flex Cable", price: "₹279" }
         ];
 
         // Sample data for repairing chemicals
@@ -2285,7 +5418,8 @@
 
             // Filter results based on search term
             const filteredResults = data.filter(item =>
-                item.model.toLowerCase().includes(searchTerm)
+                item.model.toLowerCase().includes(searchTerm) ||
+                (item.phone_brand && item.phone_brand.toLowerCase().includes(searchTerm))
             );
 
             displayResults(filteredResults);
@@ -2303,26 +5437,51 @@
                 return;
             }
 
+            // Group results by phone brand for better organization
+            const groupedResults = {};
+
             results.forEach(item => {
-                const resultItem = document.createElement('div');
-                resultItem.className = 'result-item';
-
-                if (currentSearchType === 'battery') {
-                    // For battery search, display company and model number
-                    resultItem.innerHTML = `
-                        <div class="result-name">${item.model}</div>
-                        <div class="result-details">Company: ${item.company} | Model: ${item.battery_model}</div>
-                        <div class="result-price">${item.price}</div>
-                    `;
-                } else {
-                    // For other categories, display as before
-                    resultItem.innerHTML = `
-                        <div class="result-name">${item.model}</div>
-                        <div class="result-price">${item.price}</div>
-                    `;
+                const brand = item.phone_brand || 'Other';
+                if (!groupedResults[brand]) {
+                    groupedResults[brand] = [];
                 }
+                groupedResults[brand].push(item);
+            });
 
-                searchResults.appendChild(resultItem);
+            // Display results grouped by phone brand
+            Object.keys(groupedResults).forEach(brand => {
+                const brandHeader = document.createElement('div');
+                brandHeader.className = 'result-item';
+                brandHeader.style.background = 'rgba(0, 102, 204, 0.2)';
+                brandHeader.style.fontWeight = 'bold';
+                brandHeader.style.fontSize = '1.1rem';
+                brandHeader.textContent = `${brand}`;
+                searchResults.appendChild(brandHeader);
+
+                groupedResults[brand].forEach(item => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+
+                    if (currentSearchType === 'battery') {
+                        // For battery search, display in the requested format
+                        resultItem.innerHTML = `
+                            <div class="result-name">${item.model}</div>
+                            <div class="result-details">
+                                <span style="font-weight: 600;">Battery Company:</span> ${item.battery_company} | 
+                                <span style="font-weight: 600;">Battery Model:</span> ${item.battery_model}
+                            </div>
+                            <div class="result-price">${item.price}</div>
+                        `;
+                    } else {
+                        // For other categories, display as before
+                        resultItem.innerHTML = `
+                            <div class="result-name">${item.model}</div>
+                            <div class="result-price">${item.price}</div>
+                        `;
+                    }
+
+                    searchResults.appendChild(resultItem);
+                });
             });
         }
 
@@ -2349,7 +5508,8 @@
 
             const batteryResults = batteryData.filter(item =>
                 item.model.toLowerCase().includes(searchTerm) ||
-                item.company.toLowerCase().includes(searchTerm) ||
+                item.phone_brand.toLowerCase().includes(searchTerm) ||
+                item.battery_company.toLowerCase().includes(searchTerm) ||
                 item.battery_model.toLowerCase().includes(searchTerm)
             );
 
@@ -2422,27 +5582,57 @@
                     noResults.textContent = 'No items found';
                     resultsList.appendChild(noResults);
                 } else {
-                    category.results.forEach(item => {
-                        const resultItem = document.createElement('div');
-                        resultItem.className = 'category-result-item';
+                    // Group battery results by phone brand
+                    if (category.type === 'battery') {
+                        const groupedResults = {};
 
-                        if (category.type === 'battery') {
-                            // For battery search, display company and model number
+                        category.results.forEach(item => {
+                            const brand = item.phone_brand || 'Other';
+                            if (!groupedResults[brand]) {
+                                groupedResults[brand] = [];
+                            }
+                            groupedResults[brand].push(item);
+                        });
+
+                        // Display grouped results
+                        Object.keys(groupedResults).forEach(brand => {
+                            const brandHeader = document.createElement('div');
+                            brandHeader.className = 'category-result-item';
+                            brandHeader.style.background = 'rgba(0, 102, 204, 0.2)';
+                            brandHeader.style.fontWeight = 'bold';
+                            brandHeader.textContent = `${brand}`;
+                            resultsList.appendChild(brandHeader);
+
+                            groupedResults[brand].forEach(item => {
+                                const resultItem = document.createElement('div');
+                                resultItem.className = 'category-result-item';
+
+                                resultItem.innerHTML = `
+                                    <div class="category-result-name">${item.model}</div>
+                                    <div class="category-result-details">
+                                        <span style="font-weight: 600;">Battery Company:</span> ${item.battery_company} | 
+                                        <span style="font-weight: 600;">Battery Model:</span> ${item.battery_model}
+                                    </div>
+                                    <div class="category-result-price">${item.price}</div>
+                                `;
+
+                                resultsList.appendChild(resultItem);
+                            });
+                        });
+                    } else {
+                        // For other categories, display as before
+                        category.results.forEach(item => {
+                            const resultItem = document.createElement('div');
+                            resultItem.className = 'category-result-item';
+
                             resultItem.innerHTML = `
                                 <div class="category-result-name">${item.model}</div>
-                                <div class="category-result-details">Company: ${item.company} | Model: ${item.battery_model}</div>
                                 <div class="category-result-price">${item.price}</div>
                             `;
-                        } else {
-                            // For other categories, display as before
-                            resultItem.innerHTML = `
-                                <div class="category-result-name">${item.model}</div>
-                                <div class="category-result-price">${item.price}</div>
-                            `;
-                        }
 
-                        resultsList.appendChild(resultItem);
-                    });
+                            resultsList.appendChild(resultItem);
+                        });
+                    }
                 }
 
                 categorySection.appendChild(categoryTitle);
@@ -2464,6 +5654,96 @@
                 icon.classList.add('fa-moon');
             }
         });
+
+        // Create mobile repairing themed background
+        function createMobileRepairBackground() {
+            const backgroundContainer = document.getElementById('backgroundAnimation');
+            const partIcons = ['📱', '🔋', '⚡', '🔧', '🛠️', '💻', '📲', '🔌', '💡', '🔍'];
+
+            // Create circuit lines
+            for (let i = 0; i < 8; i++) {
+                const circuitLine = document.createElement('div');
+                circuitLine.classList.add('circuit-line');
+
+                const width = Math.random() * 200 + 50;
+                const height = Math.random() * 4 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const rotation = Math.random() * 360;
+
+                circuitLine.style.width = `${width}px`;
+                circuitLine.style.height = `${height}px`;
+                circuitLine.style.left = `${posX}%`;
+                circuitLine.style.top = `${posY}%`;
+                circuitLine.style.transform = `rotate(${rotation}deg)`;
+
+                backgroundContainer.appendChild(circuitLine);
+            }
+
+            // Create mobile parts
+            for (let i = 0; i < 12; i++) {
+                const mobilePart = document.createElement('div');
+                mobilePart.classList.add('mobile-part');
+
+                const size = Math.random() * 60 + 30;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                const iconIndex = Math.floor(Math.random() * partIcons.length);
+
+                mobilePart.style.width = `${size}px`;
+                mobilePart.style.height = `${size}px`;
+                mobilePart.style.left = `${posX}%`;
+                mobilePart.style.top = `${posY}%`;
+                mobilePart.style.animationDelay = `${delay}s`;
+                mobilePart.style.animationDuration = `${duration}s`;
+                mobilePart.textContent = partIcons[iconIndex];
+
+                backgroundContainer.appendChild(mobilePart);
+            }
+
+            // Create screws
+            for (let i = 0; i < 15; i++) {
+                const screw = document.createElement('div');
+                screw.classList.add('screw');
+
+                const size = Math.random() * 15 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+
+                screw.style.width = `${size}px`;
+                screw.style.height = `${size}px`;
+                screw.style.left = `${posX}%`;
+                screw.style.top = `${posY}%`;
+
+                backgroundContainer.appendChild(screw);
+            }
+
+            // Create tools
+            for (let i = 0; i < 6; i++) {
+                const tool = document.createElement('div');
+                tool.classList.add('tool');
+
+                const width = Math.random() * 40 + 20;
+                const height = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const rotation = Math.random() * 360;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 15 + 20;
+
+                tool.style.width = `${width}px`;
+                tool.style.height = `${height}px`;
+                tool.style.left = `${posX}%`;
+                tool.style.top = `${posY}%`;
+                tool.style.transform = `rotate(${rotation}deg)`;
+                tool.style.animationDelay = `${delay}s`;
+                tool.style.animationDuration = `${duration}s`;
+
+                backgroundContainer.appendChild(tool);
+            }
+        }
 
         // Initialize mobile repair background on load
         window.addEventListener('load', createMobileRepairBackground);
