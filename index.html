@@ -759,6 +759,91 @@
             transform: scale(1.2);
         }
 
+        /* Professional Services Section */
+        .services-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            max-width: 900px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            animation: fadeIn 2s ease-out 1.2s both;
+            border: 2px solid var(--border-color);
+            width: 100%;
+        }
+
+        .services-title {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .services-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .services-highlight {
+            font-weight: 700;
+            color: var(--text-primary);
+            background: rgba(0, 102, 204, 0.2);
+            padding: 8px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: inline-block;
+            border: 2px solid var(--accent-primary);
+        }
+
+        body.dark-mode .services-highlight {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .services-list {
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .service-item {
+            background: rgba(0, 102, 204, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        body.dark-mode .service-item {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .service-item:hover {
+            background: rgba(0, 102, 204, 0.1);
+            transform: translateX(5px);
+        }
+
+        body.dark-mode .service-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
         .contact-section {
             background: var(--card-bg);
             border-radius: 20px;
@@ -1017,8 +1102,13 @@
                 flex-direction: column;
             }
 
+            .services-title,
             .contact-title {
                 font-size: 1.7rem;
+            }
+
+            .services-subtitle {
+                font-size: 1.3rem;
             }
 
             .contact-info {
@@ -1090,6 +1180,7 @@
                 font-size: 1rem;
             }
 
+            .services-title,
             .contact-title {
                 font-size: 1.5rem;
                 flex-direction: column;
@@ -1113,10 +1204,8 @@
                 padding: 20px;
             }
 
-            .welcome-section {
-                padding: 20px;
-            }
-
+            .welcome-section,
+            .services-section,
             .contact-section {
                 padding: 20px;
             }
@@ -1223,7 +1312,7 @@
                     <i class="fa-solid fa-mobile-screen-button"></i>
                     FOLDER
                 </button>
-                <button disabled class="category-btn" id="categoryExtraBtn">
+                <button class="category-btn" id="categoryExtraBtn">
                     <i class="fas fa-tools"></i>
                     EXTRA ITEM
                 </button>
@@ -1236,7 +1325,7 @@
                     SPARE PARTS
                 </button>
                 <!-- New Repairing CHEMICAL Button -->
-                <button disabled class="category-btn" id="categoryChemicalBtn">
+                <button class="category-btn" id="categoryChemicalBtn">
                     <i class="fas fa-flask"></i>
                     REPAIRING CHEMICAL
                 </button>
@@ -1284,6 +1373,66 @@
                 </p>
             </div>
 
+            <!-- Professional Services Section -->
+            <div class="services-section">
+                <h2 class="services-title">
+                    <span>🔧</span> Professional Mobile Repair Services
+                </h2>
+                <div class="services-subtitle">
+                    <span class="services-highlight">On-Site and Hand-to-Hand Repair Service</span>
+                </div>
+                <p class="welcome-text">
+                    <span class="highlight">Terms and Conditions Apply</span>
+                </p>
+
+                <p class="welcome-text">
+                    We offer a range of specialized mobile and chip-level repair services to restore your device to its
+                    optimal condition:
+                </p>
+
+                <div class="services-list">
+                    <div class="service-item">
+                        <div class="service-name">iPhone Back Glass Change with Laser Technology</div>
+                        <div class="service-description">
+                            <span class="highlight">Accurate and Safe Change</span> of broken iPhone back glass using
+                            <span class="highlight">cutting-edge laser tools</span> for a perfect finish.
+                        </div>
+                    </div>
+
+
+      <div class="service-item">
+    <div class="service-name">Display Flex Change and Repair</div>
+    <div class="service-description">
+        <span class="highlight">Expert service</span> for changing and repairing flex components. Quick, reliable, and professional <strong>flex repair and Change</strong> to keep your device working perfectly.
+    </div>
+</div>
+
+
+
+                   <div class="service-item">
+    <div class="service-name">Mobile Touch Change and Repair</div>
+    <div class="service-description">
+        <span class="highlight">Professional service</span> to Change or repair mobile touch panels, 
+        <span class="highlight">restoring full touch functionality while preserving your original display</span>.
+    </div>
+</div>
+
+                    <div class="service-item">
+                        <div class="service-name">Advanced Chip-Level Repair</div>
+                        <div class="service-description">
+                            <span class="highlight">High-end component-level soldering</span> and repair work for both
+                            <span class="highlight">iPhone and Android devices</span>.
+                        </div>
+                    </div>
+                </div>
+
+                <p class="welcome-text">
+                    Trust our experienced technicians for all your mobile repair needs. We use <span
+                        class="highlight">state-of-the-art equipment</span> and <span class="highlight">genuine
+                        parts</span> to ensure the highest quality service.
+                </p>
+            </div>
+
             <!-- Contact Information Section -->
             <div class="contact-section">
                 <h2 class="contact-title">
@@ -1325,8 +1474,7 @@
     <script>
         // Sample data for batteries with phone brands
         const batteryData = [
-            
-  {
+{
     "phone_brand": "VIVO",
     "model": "V5+",
     "battery_company": "MOBICROWN",
@@ -5208,58 +5356,51 @@
 
         // Sample data for folders
         const folderData = [
-            { "model": "iPhone 4", "price": "₹-" },
-            { "model": "iPhone 4S", "price": "₹-" },
-            { "model": "iPhone 5", "price": "₹-" },
-            { "model": "iPhone 5S", "price": "₹-" },
-            { "model": "iPhone 6", "price": "₹-" },
-            { "model": "iPhone 6 Plus", "price": "₹-" },
-            { "model": "iPhone 6s", "price": "₹-" },
-            { "model": "iPhone 6s Plus", "price": "₹-" },
-            { "model": "iPhone 7", "price": "₹-" },
-            { "model": "iPhone 7 Plus", "price": "₹-" }
+          
         ];
 
         // Sample data for extra items
         const extraItemData = [
-            { model: "Charging Port", price: "₹299" },
-            { model: "Earpiece Speaker", price: "₹199" },
-            { model: "Loudspeaker", price: "₹249" },
-            { model: "Vibration Motor", price: "₹149" },
-            { model: "Front Camera", price: "₹399" },
-            { model: "Rear Camera", price: "₹599" },
-            { model: "Power Button", price: "₹179" },
-            { model: "Volume Buttons", price: "₹199" },
-            { model: "Home Button", price: "₹149" },
-            { model: "SIM Tray", price: "₹99" }
+            { model: "Desoldering Wire", price: "₹80" },
+            { model: "All Mobile Screwdriver Set (Basic)", price: "₹50" },
+            { model: "All Mobile Screwdriver Set (Standard)", price: "₹100" },
+            { model: "All Mobile Screwdriver Set (Premium)", price: "₹150" },
+            { model: "Cutting Wire", price: "₹50" },
+            { model: "OCA Glass (Basic Model)", price: "₹50" },
+            { model: "OCA Glass (Standard Model)", price: "₹100" },
+            { model: "OCA Glass (Premium Model)", price: "₹150" },
+            { model: "Touch Panel (Basic)", price: "₹100" },
+            { model: "Touch Panel (Premium)", price: "₹150" },
+            { model: "Sunshine Glue", price: "₹100" },
+            { model: "Mechanic Glue", price: "₹100" },
+            { model: "Regular Glue", price: "₹70" },
+            { model: "Mechanic Glue Remover Tool", price: "₹900" },
+            { model: "Screwdriver Mechanic Set", price: "₹950" },
+            { model: "Flex Paste", price: "₹130" },
+            { model: "Soldering Paste (Basic)", price: "₹230" },
+            { model: "Soldering Paste (Premium)", price: "₹350" },
+            { model: "Blade 11 Pack (100 Pieces)", price: "₹200" },
+            { model: "Separator (Basic)", price: "₹1500" },
+            { model: "Separator (Premium)", price: "₹3500" },
+            { model: "SMD Handle (Basic)", price: "₹250" },
+            { model: "SMD Handle (Premium)", price: "₹350" },
+            { model: "Quick SMD", price: "₹1400" },
+            { model: "Max SMD", price: "₹1450" },
+            { model: "Small Machine Iron (Basic)", price: "₹350" },
+            { model: "Small Machine Iron (Premium)", price: "₹500" }
         ];
 
         // Sample data for spare parts
         const sparePartsData = [
-            { model: "Display Assembly", price: "₹1,299" },
-            { model: "Back Cover", price: "₹499" },
-            { model: "Motherboard", price: "₹2,999" },
-            { model: "Charging Flex Cable", price: "₹349" },
-            { model: "Battery Connector", price: "₹199" },
-            { model: "Camera Lens", price: "₹299" },
-            { model: "Earpiece Mesh", price: "₹79" },
-            { model: "Speaker Grill", price: "₹89" },
-            { model: "Volume Flex Cable", price: "₹279" },
-            { model: "Power Flex Cable", price: "₹279" }
+           
         ];
 
         // Sample data for repairing chemicals
         const chemicalData = [
-            { model: "Isopropyl Alcohol", price: "₹199" },
-            { model: "Thermal Paste", price: "₹149" },
-            { model: "Contact Cleaner", price: "₹299" },
-            { model: "PCB Cleaner", price: "₹349" },
-            { model: "Screen Adhesive", price: "₹249" },
-            { model: "BGA Flux", price: "₹399" },
-            { model: "Solder Paste", price: "₹299" },
-            { model: "Conformal Coating", price: "₹449" },
-            { model: "Desoldering Wick", price: "₹199" },
-            { model: "Solder Wire", price: "₹179" }
+            
+            { model: "Falcon 530", price: "₹160" },
+            { model: "Glue Remover", price: "₹60" },
+            { model: "OCA Machine Pump Oil", price: "₹200" }
         ];
 
         // Get DOM elements
